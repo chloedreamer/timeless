@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TIMELESS</title>
+<style>
+  :root {
+    --rose: #c8a0a0;
+    --rose-deep: #9b6b6b;
+    --rose-light: #f5eded;
+    --rose-bg: #faf5f5;
+    --muted: #7a6a6a;
+    --dark: #2a1f1f;
+    --border: #e8dede;
+    --white: #ffffff;
+
+    --fs-xl: 1.8rem;
+    --fs-l: 15px;
+    --fs-m: 13px;
+    --fs-s: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    background: var(--rose-bg);
+    color: var(--dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 15vh;
+  }
+
+  /* HOA ANH ĐÀO */
+  #sakura-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.45;
+  }
+
+  .landing {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    width: 100%;
+    max-width: 680px;
+  }
+
+  .brand {
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 200;
+    color: var(--rose-deep);
+    letter-spacing: 0.35em;
+    line-height: 1;
+    margin-bottom: 0.8rem;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .divider span { width: 50px; height: 1px; background: var(--rose); display: block; }
+
+  .tagline {
+    font-size: var(--fs-s);
+    letter-spacing: 0.15em;
+    color: var(--rose-deep);
+  }
+
+  .choices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+
+  .choice-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--rose-light);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(155,107,107,0.12);
+  }
+
+  .choice-card:hover {
+    background: var(--rose-deep);
+    color: white;
+    box-shadow: 0 4px 12px rgba(155,107,107,0.2);
+  }
+
+  .choice-card:hover .choice-title { color: white; }
+  .choice-card:hover .choice-desc { color: rgba(255,255,255,0.85); }
+
+  .choice-title {
+    font-size: var(--fs-l);
+    font-weight: 600;
+    color: var(--rose-deep);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.6rem;
+  }
+
+  .choice-desc {
+    font-size: var(--fs-m);
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+
+  .footer-tagline {
+    position: fixed;
+    bottom: 2rem;
+    left: 0; right: 0;
+    font-size: var(--fs-s);
+    letter-spacing: 0.05em;
+    color: var(--rose-deep);
+    text-align: center;
+    z-index: 1;
+  }
+
+  @media (max-width: 500px) {
+    .choices {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="sakura-canvas"></canvas>
+
+<div class="landing">
+  <div class="brand">TIMELESS</div>
+  <div style="font-size: var(--fs-l); color: var(--rose); margin: 0.8rem 0;">🌸</div>
+  <div class="tagline">Dịch vụ cho thuê nhóm & ký gửi hàng hiệu cao cấp</div>
+
+  <div class="choices">
+    <a href="thue-nhom.html" class="choice-card">
+      <div class="choice-title">Thuê nhóm</div>
+      <div class="choice-desc">Hệ thống nhóm Facebook thời trang, bảng giá & quy định</div>
+    </a>
+    <a href="thanh-ly.html" class="choice-card">
+      <div class="choice-title">Thanh lý & Ký gửi</div>
+      <div class="choice-desc">Ký gửi hàng hiệu cao cấp, đăng bài thanh lý</div>
+    </a>
+  </div>
+</div>
+
+<div class="footer-tagline">Cảm ơn bạn đã tin tưởng và đồng hành cùng Timeless 🤝</div>
+
+<script>
+  /* Hiệu ứng hoa anh đào */
+  const canvas = document.getElementById('sakura-canvas');
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const petals = [];
+  const PETAL_COUNT = 50;
+  const PETAL = '🌸';
+
+  for (let i = 0; i < PETAL_COUNT; i++) {
+    petals.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight - window.innerHeight,
+      size: Math.random() * 10 + 15,
+      speedY: Math.random() * 0.6 + 0.6,
+      speedX: Math.random() * 0.4 - 0.2,
+      rotation: Math.random() * 360,
+      rotSpeed: (Math.random() - 0.5) * 0.4,
+      opacity: Math.random() * 0.20 + 0.25,
+      sway: Math.random() * 0.3,
+      swayOffset: Math.random() * Math.PI * 2
+    });
+  }
+
+  let frame = 0;
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    frame++;
+    petals.forEach(p => {
+      p.y += p.speedY;
+      p.x += p.speedX + Math.sin(frame * 0.01 + p.swayOffset) * p.sway;
+      p.rotation += p.rotSpeed;
+      if (p.y > canvas.height + 20) {
+        p.y = -20;
+        p.x = Math.random() * canvas.width;
+      }
+      ctx.save();
+      ctx.globalAlpha = p.opacity;
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation * Math.PI / 180);
+      ctx.font = `${p.size}px serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(PETAL, 0, 0);
+      ctx.restore();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+</script>
+</body>
+</html>

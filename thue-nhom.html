@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TIMELESS</title>
+<style>
+  :root {
+    --rose: #c8a0a0;
+    --rose-deep: #9b6b6b;
+    --rose-light: #f5eded;
+    --rose-bg: #faf5f5;
+    --gold: #b8976a;
+    --muted: #7a6a6a;
+    --dark: #2a1f1f;
+    --border: #e8dede;
+    --white: #ffffff;
+
+    /* 4 font sizes only */
+    --fs-xl: 1.8rem;   /* tiêu đề lớn, số thống kê */
+    --fs-l: 15px;      /* tên nhóm, tiêu đề card, nội dung chính */
+    --fs-m: 13px;      /* thông tin phụ, tags, search */
+    --fs-s: 12px;      /* nhãn nhỏ, nav, footer */
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    background: var(--rose-bg);
+    color: var(--dark);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: linear-gradient(135deg, #f5eded 0%, #fdf8f8 50%, #f5eded 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-sub {
+    font-size: var(--fs-s);
+    letter-spacing: 0.05em;
+    color: var(--rose-deep);
+    margin-bottom: 1rem;
+  }
+
+  .header-brand {
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 200;
+    color: var(--rose-deep);
+    letter-spacing: 0.35em;
+    line-height: 1;
+    margin-bottom: 0.8rem;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  .header-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .header-divider span { width: 50px; height: 1px; background: var(--rose); display: block; }
+
+  .header-tagline {
+    font-size: var(--fs-s);
+    letter-spacing: 0.05em;
+    color: var(--rose-deep);
+    text-align: center;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--rose-light);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow-x: auto;
+  }
+
+  .nav-tab {
+    font-size: var(--fs-m);
+    letter-spacing: 0.05em;
+    padding: 1rem 1.5rem;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.3s;
+  }
+
+  .nav-tab:hover { color: var(--rose-deep); }
+  .nav-tab.active { color: var(--rose-deep); border-bottom-color: var(--rose-deep); font-weight: 500; }
+
+  /* SECTIONS */
+  .section { display: none; max-width: 1000px; margin: 0 auto; padding: 3rem 1.5rem; }
+  .section.active { display: block; }
+
+  .section-header { text-align: center; margin-bottom: 2.5rem; }
+
+  .section-title {
+    font-size: var(--fs-xl);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: var(--rose-deep);
+    margin-bottom: 0.8rem;
+  }
+
+  .section-rule { width: 36px; height: 1px; background: var(--rose); margin: 0 auto; }
+
+  /* STATS BAR */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--border);
+    margin-bottom: 2.5rem;
+    background: var(--white);
+  }
+
+  .stat-item {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-number {
+    font-size: var(--fs-xl);
+    font-weight: 300;
+    color: var(--rose-deep);
+  }
+
+  .stat-label {
+    font-size: var(--fs-s);
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
+  /* GROUP CARDS */
+  .groups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .group-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 1.8rem 1.5rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .group-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--rose-deep);
+    transition: width 0.4s;
+  }
+
+  .group-card:hover { box-shadow: 0 16px 48px rgba(155,107,107,0.1); transform: translateY(-3px); }
+  .group-card:hover::after { width: 100%; }
+
+  .group-emoji { font-size: var(--fs-l); margin-bottom: 0.6rem; display: block; }
+
+  .group-name {
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
+
+  .group-members {
+    font-size: var(--fs-m);
+    color: var(--rose);
+    margin-bottom: 1rem;
+  }
+
+  .group-prices {
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .price-label { font-size: var(--fs-m); color: var(--muted); }
+
+  .price-value { font-size: var(--fs-l); font-weight: 600; color: var(--rose-deep); }
+
+  .group-link {
+    display: block;
+    margin-top: 1.2rem;
+    font-size: var(--fs-m);
+    color: var(--rose-deep);
+    text-decoration: none;
+    text-align: center;
+    padding: 0.7rem 1rem;
+    background: var(--rose-light);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(155,107,107,0.12);
+    transition: all 0.3s;
+    letter-spacing: 0.05em;
+  }
+
+  .group-link:hover { background: var(--rose-deep); color: white; box-shadow: 0 4px 12px rgba(155,107,107,0.2); }
+
+  /* INFO CARDS */
+  .info-grid { display: flex; flex-direction: column; gap: 1rem; }
+
+  .info-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 1.8rem;
+  }
+
+  .info-card-title {
+    font-size: var(--fs-l);
+    font-weight: 600;
+    color: var(--rose-deep);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .info-card-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .info-card p, .info-card li {
+    font-size: var(--fs-l);
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  .info-card ul { list-style: none; padding: 0; }
+
+  .info-card ul li { padding-left: 1.2rem; position: relative; }
+
+  .info-card ul li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--rose);
+  }
+
+  /* SALE TAGS */
+  .sale-wrap { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+
+  .sale-tag {
+    font-size: var(--fs-m);
+    background: var(--white);
+    border: 1px solid var(--rose);
+    color: var(--rose-deep);
+    padding: 0.3rem 0.8rem;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+  }
+
+  /* KEYWORDS */
+  .keywords-wrap { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+
+  .kw-tag {
+    font-size: var(--fs-m);
+    background: var(--rose-light);
+    border: 1px solid #e8d8d8;
+    color: var(--rose-deep);
+    padding: 0.25rem 0.7rem;
+    border-radius: 2px;
+  }
+
+  /* PAYMENT */
+  .payment-card {
+    background: var(--rose-light);
+    border: 1px solid var(--border);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .payment-card::before {
+    content: 'TIMELESS';
+    position: absolute;
+    font-size: 7rem;
+    font-weight: 100;
+    opacity: 0.05;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    color: var(--rose-deep);
+    letter-spacing: 0.05em;
+  }
+
+  .payment-bank-label {
+    font-size: var(--fs-s);
+    letter-spacing: 0.05em;
+    color: var(--rose-deep);
+    margin-bottom: 1.2rem;
+  }
+
+  .payment-bank-name {
+    font-size: var(--fs-l);
+    font-weight: 400;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .payment-stk {
+    font-size: var(--fs-l);
+    font-weight: 400;
+    color: var(--muted);
+    margin: 0.4rem 0;
+    letter-spacing: 0.05em;
+  }
+
+  .payment-name {
+    font-size: var(--fs-l);
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  .copy-btn {
+    margin-top: 1.2rem;
+    background: var(--rose-light);
+    border: 1px solid var(--border);
+    color: var(--rose-deep);
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    font-size: var(--fs-m);
+    letter-spacing: 0.05em;
+    padding: 0.6rem 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(155,107,107,0.12);
+  }
+
+  .copy-btn:hover { background: var(--rose-deep); color: white; box-shadow: 0 4px 12px rgba(155,107,107,0.2); }
+
+  .note-gold {
+    background: var(--rose-light);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    padding: 1rem 1.5rem;
+    font-size: var(--fs-l);
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  /* CHERRY BLOSSOM */
+  #sakura-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.45;
+  }
+  footer {
+    background: var(--rose-light);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+  }
+
+  .footer-brand {
+    font-size: var(--fs-l);
+    font-weight: 200;
+    letter-spacing: 0.05em;
+    color: var(--rose-deep);
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-sub { font-size: var(--fs-s); letter-spacing: 0.05em; color: var(--muted); }
+
+  .footer-tagline {
+    font-size: var(--fs-s);
+    letter-spacing: 0.05em;
+    color: var(--rose-deep);
+    text-align: center;
+  }
+
+  /* SEARCH BAR */
+  .search-wrap {
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 1px solid var(--border);
+    background: var(--white);
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    font-size: var(--fs-m);
+    color: var(--dark);
+    outline: none;
+    border-radius: 2px;
+    transition: border-color 0.3s;
+    letter-spacing: 0.05em;
+  }
+
+  .search-input:focus { border-color: var(--rose); }
+  .search-input::placeholder { color: var(--rose); opacity: 0.7; }
+
+  .search-icon {
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--fs-m);
+    color: var(--rose);
+    pointer-events: none;
+  }
+
+  @media (max-width: 600px) {
+    .section { padding: 2rem 1rem; }
+    .groups-grid { grid-template-columns: 1fr; }
+    .stat-item { border-right: 1px solid var(--border); border-bottom: none; }
+    .stat-item:last-child { border-right: none; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="sakura-canvas"></canvas>
+
+<header class="site-header">
+
+  <div class="header-brand">TIMELESS</div>
+  <div class="header-tagline" style="margin: 0.3rem 0 0.5rem;">🌸</div>
+  <div class="header-tagline">HỆ THỐNG NHÓM CHO THUÊ</div>
+</header>
+
+<nav>
+  <a href="index.html" class="nav-tab" style="text-decoration:none;">← Trang chủ</a>
+  <div class="nav-tab active" onclick="showTab('groups', this)">Hệ thống nhóm</div>
+  <div class="nav-tab" onclick="showTab('info', this)">Quy định</div>
+  <div class="nav-tab" onclick="showTab('payment', this)">Thanh toán</div>
+  <div class="nav-tab" onclick="showTab('contact', this)">Liên hệ</div>
+</nav>
+
+<!-- GROUPS -->
+<div class="section active" id="tab-groups">
+  <div class="section-header">
+    <div class="section-title">Hệ thống nhóm</div>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-number" id="stat-groups">12</div>
+      <div class="stat-label">NHÓM TRONG HỆ THỐNG</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">1M+</div>
+      <div class="stat-label">TỔNG THÀNH VIÊN</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">TOP 1</div>
+      <div class="stat-label">THỜI TRANG NỮ</div>
+    </div>
+  </div>
+
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input class="search-input" id="group-search" type="text" placeholder="Tìm nhóm..." oninput="filterGroups(this.value)">
+  </div>
+  <div id="groups-container" class="groups-grid"></div>
+</div>
+
+<!-- INFO -->
+<div class="section" id="tab-info">
+  <div class="section-header">
+    <div class="section-title">Quy định & lưu ý</div>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <div class="info-card-title">Lịch sale — được đăng 2 bài/ngày</div>
+      <div class="sale-wrap">
+        <span class="sale-tag">Ngày đôi (1/1, 2/2...)</span>
+        <span class="sale-tag">Black Friday</span>
+        <span class="sale-tag">14/02 Valentine</span>
+        <span class="sale-tag">08/03</span>
+        <span class="sale-tag">20/10</span>
+        <span class="sale-tag">Joie ra BST mới</span>
+      </div>
+    </div>
+
+    <div class="info-card" style="border-left: 3px solid var(--rose-deep);">
+      <div class="info-card-title">Quan trọng — Nhà bán hàng & KOL/KOC đăng link</div>
+      <ul>
+        <li>Đối với nhà bán hàng hoặc KOL/KOC muốn đăng bài có gắn link trực tiếp trên bài viết, giá thuê nhóm sẽ tính theo mức <strong>3 bài / ngày</strong></li>
+        <li>Ví dụ: nhóm 🌸 Joie Des Roses - Thanh lý và Trao đổi → <strong>1.000.000₫ / tháng</strong></li>
+        <li>Vui lòng liên hệ QTV để được tư vấn và xác nhận trước khi đăng bài có link</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-title">Xóa và đăng lại bài</div>
+      <ul>
+        <li>Nếu xóa bài và đăng lại phải thông báo cho team trước</li>
+        <li>Không thông báo sẽ bị tính là gian lận để đăng nhiều bài hơn</li>
+        <li>Hình thức xử lý: đình chỉ 7, 14, 28 ngày hoặc cấm vĩnh viễn không hoàn trả phí thuê</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-title">Tuyệt đối không</div>
+      <ul>
+        <li>Không đăng bằng chế độ ẩn danh — có thể mất toàn bộ bài và bị cấm khỏi nhóm</li>
+        <li>Không đăng link TikTok</li>
+        <li>Không đăng link dưới từng ảnh (caption ảnh)</li>
+        <li>Không spam link vào bài của các thành viên khác trong nhóm — chỉ được bình luận ở bài viết của chính mình</li>
+        <li>Vi phạm: đình chỉ 7, 14, 28 ngày hoặc cấm vĩnh viễn không hoàn trả phí thuê</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-title">Khi bị report / spam</div>
+      <p>Hệ thống report đang quá tải, không load được người đăng và bình luận. Để xóa nick spam nhanh nhất, hãy <strong>gửi link bài viết</strong> cho team — QTV sẽ xóa và cấm người spam ngay lập tức.</p>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-title">Khi bài bị Facebook đánh spam</div>
+      <p>Với tần suất đăng bài cao, KOL/KOC dễ bị Facebook đánh spam. Chỉ cần nhắn với QTV để được duyệt bài bằng tay.</p>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-title">Huy hiệu chuyên gia</div>
+      <p>Team sẽ cấp huy hiệu chuyên gia cho các bạn thuê nhóm sau khi thanh toán và xác nhận thành công.</p>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-title">Từ khóa cấm — bài viết & bình luận</div>
+      <p style="margin-bottom:0.8rem;">Bài viết hoặc bình luận có những từ sau sẽ bị gỡ tự động và tài khoản bị đình chỉ:</p>
+      <div class="keywords-wrap">
+        <span class="kw-tag">#order</span>
+        <span class="kw-tag">#xuattinhsom</span>
+        <span class="kw-tag">A DI ĐÀ PHẬT</span>
+        <span class="kw-tag">CHUỘT</span>
+        <span class="kw-tag">Có nha</span>
+        <span class="kw-tag">E có ạ</span>
+        <span class="kw-tag">Em có hàng</span>
+        <span class="kw-tag">Em có ạ</span>
+        <span class="kw-tag">Hàng sẵn nha</span>
+        <span class="kw-tag">MAI TÁNG</span>
+        <span class="kw-tag">MTQ</span>
+        <span class="kw-tag">MẠNH THƯỜNG QUÂN</span>
+        <span class="kw-tag">NAM MÔ</span>
+        <span class="kw-tag">Nội dung</span>
+        <span class="kw-tag">OAN QUÁ</span>
+        <span class="kw-tag">S.I.M</span>
+        <span class="kw-tag">SIM</span>
+        <span class="kw-tag">Sẵn giá tốt nha</span>
+        <span class="kw-tag">Sẵn ạ</span>
+        <span class="kw-tag">THƯƠNG QUÁ</span>
+        <span class="kw-tag">V.Ố.N</span>
+        <span class="kw-tag">XTS</span>
+        <span class="kw-tag">anh chị</span>
+        <span class="kw-tag">b.i.p</span>
+        <span class="kw-tag">bẫy chuột</span>
+        <span class="kw-tag">bịp</span>
+        <span class="kw-tag">chuột</span>
+        <span class="kw-tag">chị em</span>
+        <span class="kw-tag">chị em ơi</span>
+        <span class="kw-tag">clip</span>
+        <span class="kw-tag">có hàng sẵn ạ</span>
+        <span class="kw-tag">có sẵn nha</span>
+        <span class="kw-tag">dưới cmt</span>
+        <span class="kw-tag">e có hàng</span>
+        <span class="kw-tag">e có ạ</span>
+        <span class="kw-tag">e sẵn ạ</span>
+        <span class="kw-tag">em có ạ</span>
+        <span class="kw-tag">em sẵn ạ</span>
+        <span class="kw-tag">gia đình</span>
+        <span class="kw-tag">giá tốt</span>
+        <span class="kw-tag">giúp đỡ</span>
+        <span class="kw-tag">gõ tài liệu</span>
+        <span class="kw-tag">gõ văn bản</span>
+        <span class="kw-tag">khó khăn</span>
+        <span class="kw-tag">l.i.n.k</span>
+        <span class="kw-tag">li..nk</span>
+        <span class="kw-tag">lin..k</span>
+        <span class="kw-tag">link</span>
+        <span class="kw-tag">mình sẵn giá tốt</span>
+        <span class="kw-tag">n.ợ</span>
+        <span class="kw-tag">nợ</span>
+        <span class="kw-tag">od đủ sz</span>
+        <span class="kw-tag">order</span>
+        <span class="kw-tag">rẻ lắm</span>
+        <span class="kw-tag">sim</span>
+        <span class="kw-tag">sẵn ạ</span>
+        <span class="kw-tag">số đề</span>
+        <span class="kw-tag">thường quân</span>
+        <span class="kw-tag">video clip</span>
+        <span class="kw-tag">🆘️🆘️🆘</span>
+        <span class="kw-tag">🙏🙏🙏</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PAYMENT -->
+<div class="section" id="tab-payment">
+  <div class="section-header">
+    <div class="section-title">Thanh toán</div>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="payment-card">
+    <div class="payment-bank-name">VPBANK</div>
+    <div class="payment-stk">999818999</div>
+    <div class="payment-name">HOANG LAN PHUONG</div>
+    <div style="margin-top:1.5rem">
+      <img src="qr-payment.png" alt="QR VPBank" style="width:200px;height:200px;object-fit:contain;border-radius:8px">
+    </div>
+    <button class="copy-btn" onclick="copySTK()">SAO CHÉP SỐ TÀI KHOẢN</button>
+  </div>
+
+  <div class="note-gold" style="margin-bottom:1.5rem">
+    Nội dung chuyển khoản: Ghi <strong>tên nick Facebook</strong> muốn thuê nhóm. Sau khi thanh toán, gửi link nick thuê cho QTV để được kích hoạt và cấp huy hiệu chuyên gia.
+  </div>
+
+  <div class="info-card">
+    <div class="info-card-title">Quy trình sau thanh toán</div>
+    <ul>
+      <li>Chuyển khoản đúng số tiền theo gói và nhóm đã chọn</li>
+      <li>Ghi nội dung: tên nick Facebook thuê nhóm</li>
+      <li>Gửi link nick thuê cho QTV để xác nhận</li>
+      <li>Team cấp huy hiệu chuyên gia và kích hoạt trong vòng 24h</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="tab-contact">
+  <div class="section-header">
+    <div class="section-title">Liên hệ</div>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="info-card" style="text-align:center;padding:3rem">
+    <div class="info-card-title" style="justify-content:center">Liên hệ QTV</div>
+    <p style="color:var(--muted);line-height:2.5;margin-bottom:1.5rem">
+      Để được hỗ trợ nhanh nhất, vui lòng liên hệ qua <strong style="color:var(--rose-deep)">Zalo</strong> hoặc quét mã QR bên dưới.
+    </p>
+    <img src="qr-contact.png" alt="Zalo QR" style="width:200px;height:200px;object-fit:contain;border-radius:12px;border:1px solid var(--border);margin-bottom:1rem">
+    <p style="color:var(--rose-deep);font-weight:500;letter-spacing:0.05em">Chloe · 0368 968 497</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-tagline">Cảm ơn bạn đã tin tưởng và đồng hành cùng Timeless 🤝</div>
+</footer>
+
+<script>
+  const groups = [
+    {
+      emoji: '🌸',
+      name: 'Joie Des Roses - Thanh lý và Trao đổi',
+      members: '200.000 thành viên',
+      link: 'https://www.facebook.com/groups/joiedesroses/',
+      prices: { '1 bài / ngày': '550.000₫', '2 bài / ngày': '850.000₫', '3 bài / ngày': '1.000.000₫' }
+    },
+    {
+      emoji: '🌸',
+      name: 'Thanh lý Joie Des Roses',
+      members: '125.000 thành viên',
+      link: 'https://www.facebook.com/groups/joiedesrosesthanhly/',
+      prices: { '1 bài / ngày': '500.000₫', '2 bài / ngày': '750.000₫', '3 bài / ngày': '1.000.000₫' }
+    },
+    {
+      emoji: '🌸',
+      name: 'By Cún - Thanh lý và Trao đổi',
+      members: '55.000 thành viên',
+      link: 'https://www.facebook.com/groups/thanhlylibre/',
+      prices: { '1 bài / ngày': '500.000₫', '2 bài / ngày': '750.000₫', '3 bài / ngày': '1.000.000₫' }
+    },
+    {
+      emoji: '🌸',
+      name: 'JOIE DES ROSES - Thanh Lý Và Trao Đổi',
+      members: '185.000 thành viên',
+      link: 'https://www.facebook.com/groups/outfitoftheday.vn/',
+      prices: { '1 bài / ngày': '250.000₫', '2 bài / ngày': '400.000₫', '3 bài / ngày': '500.000₫' }
+    },
+    {
+      emoji: '🌸',
+      name: 'Gossip Thời Trang',
+      members: '65.000 thành viên',
+      link: 'https://www.facebook.com/groups/thanhlydocongso/',
+      prices: { '1 bài / ngày': '250.000₫', '2 bài / ngày': '400.000₫', '3 bài / ngày': '500.000₫' }
+    },
+    {
+      emoji: '🌸',
+      name: 'méli - thanh lý và trao đổi',
+      members: '10.000 thành viên',
+      link: 'https://www.facebook.com/groups/melithanhly/',
+      prices: { '1 bài / ngày': '100.000₫', '2 bài / ngày': '200.000₫', '3 bài / ngày': '250.000₫' }
+    },
+    {
+      emoji: '🔴',
+      name: 'THANH LÝ LSOUL',
+      members: '100.000 thành viên',
+      link: 'https://www.facebook.com/groups/lseoul/',
+      prices: { '1 bài / ngày': '500.000₫', '2 bài / ngày': '750.000₫', '3 bài / ngày': '1.000.000₫' }
+    },
+    {
+      emoji: '🔴',
+      name: 'THANH LÝ ONONMM',
+      members: '25.000 thành viên',
+      link: 'https://www.facebook.com/groups/ononmade/',
+      prices: { '1 bài / ngày': '250.000₫', '2 bài / ngày': '400.000₫', '3 bài / ngày': '500.000₫' }
+    },
+    {
+      emoji: '🔴',
+      name: 'THANH LÝ VEOS - VEOS BY KHANH',
+      members: '30.000 thành viên',
+      link: 'https://www.facebook.com/groups/veosbykhanh/',
+      prices: { '1 bài / ngày': '250.000₫', '2 bài / ngày': '400.000₫', '3 bài / ngày': '500.000₫' }
+    },
+    {
+      emoji: '🔴',
+      name: 'THANH LÝ AMELIE',
+      members: '15.000 thành viên',
+      link: 'https://www.facebook.com/groups/thanhlyamelie/',
+      prices: { '1 bài / ngày': '250.000₫', '2 bài / ngày': '400.000₫', '3 bài / ngày': '500.000₫' }
+    },
+    {
+      emoji: '🔴',
+      name: 'THANH LÝ H2B À LA MODE',
+      members: '10.000 thành viên',
+      link: 'https://www.facebook.com/groups/thanhlyh2bcolin/',
+      prices: { '1 bài / ngày': '100.000₫', '2 bài / ngày': '200.000₫', '3 bài / ngày': '250.000₫' }
+    },
+    {
+      emoji: '🔴',
+      name: 'THANH LÝ TRIO JI',
+      members: '10.000 thành viên',
+      link: 'https://www.facebook.com/groups/trioji/',
+      prices: { '1 bài / ngày': '100.000₫', '2 bài / ngày': '200.000₫', '3 bài / ngày': '250.000₫' }
+    }
+  ];
+
+  function renderGroups(data) {
+    const container = document.getElementById('groups-container');
+    container.innerHTML = data.map(g => `
+      <div class="group-card">
+        <span class="group-emoji">${g.emoji}</span>
+        <div class="group-name">${g.name}</div>
+        <div class="group-members">${g.members}</div>
+        <div class="group-prices">
+          ${Object.entries(g.prices).map(([label, val]) => `
+            <div class="price-row">
+              <span class="price-label">${label}</span>
+              <span class="price-value">${val}</span>
+            </div>
+          `).join('')}
+        </div>
+        <a href="${g.link}" target="_blank" class="group-link">Truy cập nhóm</a>
+      </div>
+    `).join('');
+  }
+
+  renderGroups(groups);
+  document.getElementById('stat-groups').textContent = groups.length;
+
+  // SAKURA FALLING EFFECT
+  const canvas = document.getElementById('sakura-canvas');
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const petals = [];
+  const PETAL_COUNT = 50;
+  const PETAL = '🌸';
+
+  for (let i = 0; i < PETAL_COUNT; i++) {
+    petals.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight - window.innerHeight,
+      size: Math.random() * 10 + 15,
+      speedY: Math.random() * 0.6 + 0.6,
+      speedX: Math.random() * 0.4 - 0.2,
+      rotation: Math.random() * 360,
+      rotSpeed: (Math.random() - 0.5) * 0.4,
+      opacity: Math.random() * 0.20 + 0.25,
+      sway: Math.random() * 0.3,
+      swayOffset: Math.random() * Math.PI * 2
+    });
+  }
+
+  let frame = 0;
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    frame++;
+    petals.forEach(p => {
+      p.y += p.speedY;
+      p.x += p.speedX + Math.sin(frame * 0.01 + p.swayOffset) * p.sway;
+      p.rotation += p.rotSpeed;
+      if (p.y > canvas.height + 20) {
+        p.y = -20;
+        p.x = Math.random() * canvas.width;
+      }
+      ctx.save();
+      ctx.globalAlpha = p.opacity;
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation * Math.PI / 180);
+      ctx.font = `${p.size}px serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(PETAL, 0, 0);
+      ctx.restore();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  function filterGroups(query) {
+    const q = query.toLowerCase().trim();
+    const filtered = q ? groups.filter(g => g.name.toLowerCase().includes(q)) : groups;
+    renderGroups(filtered);
+  }
+
+  function showTab(tab, el) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    el.classList.add('active');
+  }
+
+  function copySTK() {
+    navigator.clipboard.writeText('999818999').then(() => {
+      alert('ĐÃ SAO CHÉP SỐ TÀI KHOẢN: 999818999');
+    });
+  }
+
+</script>
+</body>
+</html>
