@@ -80,47 +80,34 @@
   }
 
   .choices {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
     margin-top: 3rem;
   }
 
   .choice-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    text-align: center;
+    padding: 0.85rem 2.5rem;
+    font-size: var(--fs-m);
+    font-weight: 500;
+    color: var(--rose-deep);
     background: var(--rose-light);
     border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 2.5rem 1.5rem;
+    border-radius: 999px;
     text-decoration: none;
     transition: all 0.3s;
     box-shadow: 0 2px 8px rgba(155,107,107,0.12);
+    letter-spacing: 0.05em;
+    width: 280px;
   }
 
   .choice-card:hover {
     background: var(--rose-deep);
     color: white;
     box-shadow: 0 4px 12px rgba(155,107,107,0.2);
-  }
-
-  .choice-card:hover .choice-title { color: white; }
-  .choice-card:hover .choice-desc { color: rgba(255,255,255,0.85); }
-
-  .choice-title {
-    font-size: var(--fs-l);
-    font-weight: 600;
-    color: var(--rose-deep);
-    letter-spacing: 0.08em;
-    margin-bottom: 0.6rem;
-  }
-
-  .choice-desc {
-    font-size: var(--fs-m);
-    color: var(--muted);
-    line-height: 1.7;
   }
 
 
@@ -152,14 +139,8 @@
   <div class="tagline">Dịch vụ cho thuê nhóm & ký gửi hàng hiệu cao cấp</div>
 
   <div class="choices">
-    <a href="thue-nhom.html" class="choice-card">
-      <div class="choice-title">Thuê nhóm</div>
-      <div class="choice-desc">Hệ thống nhóm Facebook thời trang, bảng giá & quy định</div>
-    </a>
-    <a href="thanh-ly.html" class="choice-card">
-      <div class="choice-title">Thanh lý & Ký gửi</div>
-      <div class="choice-desc">Ký gửi hàng hiệu cao cấp, đăng bài thanh lý</div>
-    </a>
+    <a href="thue-nhom.html" class="choice-card">Thuê nhóm</a>
+    <a href="thanh-ly.html" class="choice-card">Thanh lý & Ký gửi</a>
   </div>
 </div>
 
