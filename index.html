@@ -74,9 +74,11 @@
   .divider span { width: 50px; height: 1px; background: var(--rose); display: block; }
 
   .tagline {
-    font-size: var(--fs-s);
+    font-size: clamp(9px, 2.8vw, 12px);
     letter-spacing: 0.15em;
     color: var(--rose-deep);
+    white-space: nowrap;
+    margin-bottom: 0.5rem;
   }
 
   .choices {
@@ -89,7 +91,7 @@
 
   .choices-label {
     font-size: var(--fs-m);
-    color: var(--muted);
+    color: var(--rose-deep);
     letter-spacing: 0.1em;
     margin-bottom: 0.3rem;
   }
@@ -142,9 +144,9 @@
 <canvas id="sakura-canvas"></canvas>
 
 <div class="landing">
+  <div class="tagline">Nền tảng cho thuê nhóm & ký gửi hàng hiệu cao cấp</div>
   <div class="brand">TIMELESS</div>
   <div style="font-size: var(--fs-l); color: var(--rose); margin: 0.8rem 0;">🌸</div>
-  <div class="tagline">Dịch vụ cho thuê nhóm & ký gửi hàng hiệu cao cấp</div>
 
   <div class="choices">
     <div class="choices-label">Bạn muốn?</div>
