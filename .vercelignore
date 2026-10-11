@@ -1,0 +1,7 @@
+# File sao lưu — không đưa lên web
+*.backup-*
+_backups/
+
+# Cấu hình local, rác hệ điều hành
+.claude/
+.DS_Store

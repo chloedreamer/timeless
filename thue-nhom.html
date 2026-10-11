@@ -3,7 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TIMELESS</title>
+<title>Thuê nhóm Facebook thời trang | TIMELESS — Joie, By Cún, LSOUL, Seo Studio</title>
+<meta name="description" content="Bảng giá thuê 12 nhóm Facebook thời trang nữ với hơn 1M thành viên tại Việt Nam. 3 tầng dịch vụ cho KOL/KOC, nhà bán hàng, PR và ghim ảnh bìa.">
+<meta name="keywords" content="thuê nhóm facebook, thuê group thời trang, đăng bài KOL, quảng cáo thời trang nữ, joie des roses, by cún, lsoul, timeless">
+<meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="PhNVNxzqEZSTrNUypVdY7yA4LwFyYvGhY8r9brpRLXY">
+<link rel="canonical" href="https://timeless-vn.vercel.app/thue-nhom.html">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://timeless-vn.vercel.app/thue-nhom.html">
+<meta property="og:title" content="TIMELESS · Thuê nhóm Facebook thời trang">
+<meta property="og:description" content="12 nhóm · 1M+ thành viên · 3 tầng dịch vụ cho KOL và nhà bán hàng.">
+<meta property="og:image" content="https://timeless-vn.vercel.app/og-image.png">
+<meta property="og:locale" content="vi_VN">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#c8a0a0">
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Facebook Group Rental for Fashion Brands",
+  "provider": {
+    "@type": "Organization",
+    "name": "TIMELESS",
+    "url": "https://timeless-vn.vercel.app/"
+  },
+  "areaServed": "VN",
+  "description": "Hệ thống 12 nhóm Facebook thời trang nữ cho thuê với hơn 1 triệu thành viên. Hợp tác chuyên nghiệp với KOL, KOC, nhà bán hàng và thương hiệu.",
+  "inLanguage": "vi-VN"
+}
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TLEFLKYQK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0TLEFLKYQK');
+</script>
 <style>
   :root {
     --rose: #c8a0a0;
@@ -112,13 +153,14 @@
 
   .section-title {
     font-size: var(--fs-xl);
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 0.05em;
     color: var(--rose-deep);
     margin-bottom: 0.8rem;
+    text-transform: uppercase;
   }
 
-  .section-rule { width: 36px; height: 1px; background: var(--rose); margin: 0 auto; }
+  .section-rule { display: none; }
 
   /* STATS BAR */
   .stats-bar {
@@ -137,6 +179,79 @@
 
   .stat-item:last-child { border-right: none; }
 
+  /* BẢNG GIÁ THUÊ NHÓM */
+  .pricing-structure {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 1.5rem 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+  .pricing-title {
+    text-align: center;
+    font-size: var(--fs-l);
+    color: var(--rose-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .pricing-tier {
+    border: 1px solid var(--border);
+    padding: 1rem;
+    background: var(--rose-bg);
+    display: flex;
+    flex-direction: column;
+  }
+  .pricing-tier.highlight {
+    background: linear-gradient(180deg, #fdf8f8 0%, var(--rose-bg) 100%);
+    border-color: var(--rose);
+  }
+  .tier-label {
+    font-size: var(--fs-s);
+    color: var(--rose-deep);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .tier-content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .tier-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 0;
+    font-size: var(--fs-m);
+    color: var(--dark);
+  }
+  .tier-price {
+    color: var(--rose-deep);
+    font-weight: 500;
+  }
+  .tier-note {
+    font-size: var(--fs-m);
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.7;
+  }
+  .pricing-footnote {
+    text-align: center;
+    font-size: var(--fs-s);
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 1rem;
+  }
+  @media (max-width: 700px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+  }
+
   .stat-number {
     font-size: var(--fs-xl);
     font-weight: 300;
@@ -153,8 +268,8 @@
   /* GROUP CARDS */
   .groups-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.2rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .group-card {
@@ -166,6 +281,27 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+  }
+
+  .group-hot-badge {
+    position: absolute;
+    top: 0.9rem;
+    right: 0.9rem;
+    background: var(--rose-deep);
+    color: white;
+    font-size: var(--fs-s);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    z-index: 2;
+    box-shadow: 0 2px 6px rgba(155,107,107,0.25);
+  }
+
+  .group-card.hot {
+    background: linear-gradient(180deg, #fdf8f8 0%, var(--white) 30%);
+    border-color: var(--rose);
   }
 
   .group-card::after {
@@ -215,6 +351,55 @@
 
   .price-value { font-size: var(--fs-l); font-weight: 600; color: var(--rose-deep); }
 
+  /* Tier trong tung group card — 2 cot ngang */
+  .price-tiers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+  @media (max-width: 600px) {
+    .price-tiers { grid-template-columns: 1fr; }
+  }
+  .price-tier {
+    background: var(--rose-bg);
+    border: 1px solid var(--border);
+    padding: 1rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .price-tier.highlight {
+    background: linear-gradient(180deg, #fdf8f8 0%, var(--rose-bg) 100%);
+    border-color: var(--rose);
+  }
+  .price-tier-label {
+    font-size: 11px;
+    color: var(--rose-deep);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .price-tier-body { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 0.3rem; }
+  .price-tier-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--fs-m);
+  }
+  .price-tier-row .lbl { color: var(--muted); font-size: 12px; }
+  .price-tier-row .val { color: var(--rose-deep); font-weight: 600; font-size: 14px; }
+  .price-tier-note {
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.7;
+    padding: 0.4rem 0;
+  }
+  .price-tier-note strong { color: var(--rose-deep); font-weight: 500; }
+
   .group-link {
     display: block;
     margin-top: 1.2rem;
@@ -252,12 +437,6 @@
     gap: 0.6rem;
   }
 
-  .info-card-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
 
   .info-card p, .info-card li {
     font-size: var(--fs-l);
@@ -269,11 +448,21 @@
 
   .info-card ul li { padding-left: 1.2rem; position: relative; }
 
+  /* Cấp 1 — dấu chấm */
   .info-card ul li::before {
-    content: '–';
+    content: '•';
     position: absolute;
     left: 0;
     color: var(--rose);
+    font-weight: bold;
+  }
+
+  /* Cấp 2 (nested) — gạch đầu dòng, lùi vào */
+  .info-card ul ul { padding-left: 1rem; margin-top: 0.4rem; }
+
+  .info-card ul ul li::before {
+    content: '–';
+    font-weight: normal;
   }
 
   /* SALE TAGS */
@@ -310,19 +499,6 @@
     margin-bottom: 1.5rem;
     position: relative;
     overflow: hidden;
-  }
-
-  .payment-card::before {
-    content: 'TIMELESS';
-    position: absolute;
-    font-size: 7rem;
-    font-weight: 100;
-    opacity: 0.05;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
-    color: var(--rose-deep);
-    letter-spacing: 0.05em;
   }
 
   .payment-bank-label {
@@ -455,6 +631,350 @@
     .stat-item { border-right: 1px solid var(--border); border-bottom: none; }
     .stat-item:last-child { border-right: none; }
   }
+
+  /* SUB SECTION trong info-card lớn */
+  .info-subsection {
+    margin-top: 3rem;
+  }
+  .info-subsection:first-of-type {
+    margin-top: 0;
+  }
+  .info-sub-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--rose-deep);
+    margin-bottom: 0.7rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* ƯU ĐÃI NỔI BẬT */
+  .promo-card {
+    background: var(--rose-light);
+    padding: 1.8rem 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 6px;
+  }
+  .promo-title {
+    font-size: var(--fs-s);
+    color: var(--rose-deep);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+  .promo-price {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--rose-deep);
+    letter-spacing: 0.02em;
+    margin-bottom: 0.3rem;
+  }
+  .promo-price-unit {
+    font-size: var(--fs-m);
+    color: var(--muted);
+  }
+  .promo-condition {
+    font-size: var(--fs-m);
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+  .promo-condition strong { color: var(--rose-deep); font-weight: 500; }
+  .promo-groups {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  .promo-group-item.featured {
+    grid-column: 1 / -1;
+  }
+  @media (max-width: 500px) {
+    .promo-groups { grid-template-columns: 1fr; }
+  }
+  .featured-frame {
+    position: relative;
+    background: linear-gradient(135deg, #fdf8f8 0%, #f9eeee 100%);
+    box-shadow: 0 4px 16px rgba(155,107,107,0.12);
+    border: 1.5px solid var(--rose-deep);
+    border-radius: 4px;
+    padding: 1.5rem 0.35rem 0.35rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 700px) {
+    .featured-frame {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .featured-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background: var(--white);
+    padding: 1.1rem 0.9rem;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--dark);
+    transition: all 0.25s;
+  }
+  .featured-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(155,107,107,0.15);
+  }
+  .featured-item .promo-group-visit {
+    background: var(--rose-deep);
+    border-color: var(--rose-deep);
+    color: var(--white);
+    margin-top: 0.7rem;
+  }
+  .featured-item:hover .promo-group-visit {
+    filter: brightness(0.92);
+    box-shadow: 0 4px 12px rgba(155,107,107,0.3);
+  }
+  .promo-group-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background: var(--white);
+    padding: 1.1rem 0.9rem;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--dark);
+    transition: all 0.25s;
+  }
+  .promo-group-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(155,107,107,0.1);
+  }
+  .promo-group-item.featured {
+    background: linear-gradient(135deg, #fdf8f8 0%, #f9eeee 100%);
+    box-shadow: 0 4px 16px rgba(155,107,107,0.15);
+    border: 1.5px solid var(--rose-deep);
+    padding-top: 1.5rem;
+  }
+  .promo-group-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--rose-deep);
+    color: white;
+    font-size: var(--fs-s);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .promo-group-item.featured .promo-group-visit {
+    background: var(--rose-deep);
+    border-color: var(--rose-deep);
+    color: var(--white);
+  }
+  .promo-group-item.featured:hover .promo-group-visit {
+    background: var(--rose-deep);
+    border-color: var(--rose-deep);
+    filter: brightness(0.92);
+    box-shadow: 0 4px 12px rgba(155,107,107,0.3);
+  }
+  .promo-group-name {
+    font-size: 12px;
+    color: var(--dark);
+    line-height: 1.5;
+    margin-bottom: 0.4rem;
+  }
+  .promo-group-item .members {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 0.9rem;
+  }
+  .promo-group-visit {
+    display: inline-block;
+    padding: 0.45rem 1.1rem;
+    background: var(--white);
+    border: 1px solid var(--rose);
+    border-radius: 999px;
+    color: var(--rose-deep);
+    font-size: var(--fs-m);
+    letter-spacing: 0.05em;
+    transition: all 0.25s;
+  }
+  .promo-group-item:hover .promo-group-visit {
+    background: var(--rose-deep);
+    border-color: var(--rose-deep);
+    color: var(--white);
+  }
+  .promo-meta {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+  .promo-meta strong { color: var(--rose-deep); font-weight: 500; }
+  .promo-cta {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.7rem 2rem;
+    background: var(--rose-deep);
+    color: white;
+    text-decoration: none;
+    font-size: var(--fs-m);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    border-radius: 999px;
+    text-transform: uppercase;
+    transition: background 0.3s;
+  }
+  .promo-cta:hover { background: var(--dark); }
+
+  .promo-more {
+    margin-top: 0.7rem;
+  }
+  .promo-more[hidden] { display: none; }
+
+  .promo-show-more-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: fit-content;
+    margin: 1rem auto 0;
+    padding: 0.55rem 1.4rem;
+    background: var(--white);
+    border: 1px solid var(--rose);
+    color: var(--rose-deep);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.25s;
+    font-family: inherit;
+    box-shadow: 0 2px 8px rgba(155,107,107,0.08);
+    animation: gentle-pulse 2.5s ease-in-out infinite;
+  }
+  .promo-show-more-btn:hover {
+    background: var(--rose-deep);
+    color: white;
+    border-color: var(--rose-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(155,107,107,0.25);
+    animation: none;
+  }
+  @keyframes gentle-pulse {
+    0%, 100% { box-shadow: 0 2px 8px rgba(155,107,107,0.08); transform: translateY(0); }
+    50% { box-shadow: 0 4px 14px rgba(155,107,107,0.18); transform: translateY(-1px); }
+  }
+
+  /* SERVICE CARDS (Dịch vụ khác) */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 1.8rem 1.5rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--rose-deep);
+    transition: width 0.4s;
+  }
+  .service-card:hover { box-shadow: 0 16px 48px rgba(155,107,107,0.1); transform: translateY(-3px); }
+  .service-card:hover::after { width: 100%; }
+  .service-name {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--rose-deep);
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+  }
+  .service-desc {
+    font-size: var(--fs-m);
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+  .service-price-row {
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .service-price-label { font-size: var(--fs-m); color: var(--muted); }
+  .service-price-value { font-size: var(--fs-l); font-weight: 600; color: var(--rose-deep); }
+  .service-note {
+    font-size: var(--fs-m);
+    color: var(--rose);
+    margin-top: 0.6rem;
+  }
+
+  /* ZALO FAB */
+  .zalo-fab {
+    position: fixed;
+    bottom: calc(1.2rem + env(safe-area-inset-bottom, 0px));
+    right: calc(1.2rem + env(safe-area-inset-right, 0px));
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0068ff 0%, #0091ff 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0,104,255,0.35);
+    z-index: 9999;
+    transition: transform 0.25s, box-shadow 0.25s;
+    isolation: isolate;
+    line-height: 0;
+  }
+  .zalo-fab svg { display: block; width: 26px; height: 26px; position: relative; z-index: 2; }
+  .zalo-fab:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0,104,255,0.5);
+  }
+  .zalo-fab::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(0,145,255,0.5);
+    z-index: 1;
+    animation: zalo-pulse 2s infinite;
+    pointer-events: none;
+  }
+  @keyframes zalo-pulse {
+    0% { transform: scale(1); opacity: 0.55; }
+    100% { transform: scale(1.55); opacity: 0; }
+  }
 </style>
 </head>
 <body>
@@ -472,6 +992,7 @@
   <a href="index.html" class="nav-tab" style="text-decoration:none;">← Trang chủ</a>
   <div class="nav-tab active" onclick="showTab('groups', this)">Hệ thống nhóm</div>
   <div class="nav-tab" onclick="showTab('info', this)">Quy định</div>
+  <div class="nav-tab" onclick="showTab('services', this)">Dịch vụ khác</div>
   <div class="nav-tab" onclick="showTab('payment', this)">Thanh toán</div>
   <div class="nav-tab" onclick="showTab('contact', this)">Liên hệ</div>
 </nav>
@@ -481,6 +1002,9 @@
   <div class="section-header">
     <div class="section-title">Hệ thống nhóm</div>
     <div class="section-rule"></div>
+    <div style="text-align:center; font-size:var(--fs-s); color:var(--muted); margin-top:0.5rem; font-style:italic;">
+      * Giá dưới đây là <strong>giá thuê theo tháng</strong>
+    </div>
   </div>
 
   <div class="stats-bar">
@@ -498,6 +1022,77 @@
     </div>
   </div>
 
+  <div class="promo-card">
+    <div class="promo-title">Ưu đãi nổi bật</div>
+    <div class="promo-price">250.000₫ <span class="promo-price-unit">/ tháng / nhóm</span></div>
+    <div class="promo-condition">
+      Đăng <strong>3 bài / ngày</strong> · Trực tiếp link lên bài đăng, được caption link từng ảnh
+    </div>
+
+    <div class="featured-frame">
+      <span class="promo-group-badge">🔥 Nổi bật</span>
+      <a href="https://www.facebook.com/groups/outfitoftheday.vn/" target="_blank" rel="noopener" class="featured-item">
+        <div class="promo-group-name">🌸 Thanh lý By Cún - Joie Des Roses - Betti Club</div>
+        <div class="members">185.000 thành viên</div>
+        <span class="promo-group-visit">Truy cập nhóm</span>
+      </a>
+      <a href="https://www.facebook.com/groups/thanhlydocongso/" target="_blank" rel="noopener" class="featured-item">
+        <div class="promo-group-name">🌸 Ara Store - Thanh lý và Trao đổi</div>
+        <div class="members">65.000 thành viên</div>
+        <span class="promo-group-visit">Truy cập nhóm</span>
+      </a>
+    </div>
+
+    <div class="promo-more" id="promo-more" hidden>
+      <div class="promo-groups">
+        <a href="https://www.facebook.com/groups/ononmade/" target="_blank" rel="noopener" class="promo-group-item">
+          <div class="promo-group-name">🌸 ONONMM - Thanh lý và Trao đổi</div>
+          <div class="members">25.000 thành viên</div>
+          <span class="promo-group-visit">Truy cập nhóm</span>
+        </a>
+        <a href="https://www.facebook.com/groups/veosbykhanh/" target="_blank" rel="noopener" class="promo-group-item">
+          <div class="promo-group-name">🌸 Thanh lý Veos - Veos by Khanh</div>
+          <div class="members">35.000 thành viên</div>
+          <span class="promo-group-visit">Truy cập nhóm</span>
+        </a>
+        <a href="https://www.facebook.com/groups/thanhlyamelie/" target="_blank" rel="noopener" class="promo-group-item">
+          <div class="promo-group-name">🌸 Amelie - Thanh lý và Trao đổi</div>
+          <div class="members">20.000 thành viên</div>
+          <span class="promo-group-visit">Truy cập nhóm</span>
+        </a>
+        <a href="https://www.facebook.com/groups/melithanhly/" target="_blank" rel="noopener" class="promo-group-item">
+          <div class="promo-group-name">🌸 Méli - Thanh lý và Trao đổi</div>
+          <div class="members">10.000 thành viên</div>
+          <span class="promo-group-visit">Truy cập nhóm</span>
+        </a>
+        <a href="https://www.facebook.com/groups/thanhlyh2bcolin/" target="_blank" rel="noopener" class="promo-group-item">
+          <div class="promo-group-name">🌸 H2B à La Mode - Thanh lý và Trao đổi</div>
+          <div class="members">10.000 thành viên</div>
+          <span class="promo-group-visit">Truy cập nhóm</span>
+        </a>
+        <a href="https://www.facebook.com/groups/trioji/" target="_blank" rel="noopener" class="promo-group-item">
+          <div class="promo-group-name">🌸 Trio Ji - Thanh lý và Trao đổi</div>
+          <div class="members">10.000 thành viên</div>
+          <span class="promo-group-visit">Truy cập nhóm</span>
+        </a>
+        <a href="https://www.facebook.com/groups/thanhlyelpis/" target="_blank" rel="noopener" class="promo-group-item">
+          <div class="promo-group-name">🌸 WHITE ANT - Thanh lý và Trao đổi</div>
+          <div class="members">10.000 thành viên</div>
+          <span class="promo-group-visit">Truy cập nhóm</span>
+        </a>
+        <a href="https://www.facebook.com/groups/luxurybrandvietnam/" target="_blank" rel="noopener" class="promo-group-item">
+          <div class="promo-group-name">🌸 Lane JT - Thanh lý và Trao đổi</div>
+          <div class="members">10.000 thành viên</div>
+          <span class="promo-group-visit">Truy cập nhóm</span>
+        </a>
+      </div>
+    </div>
+
+    <button type="button" class="promo-show-more-btn" id="promo-more-btn" onclick="togglePromoMore()">
+      Xem thêm 8 nhóm ↓
+    </button>
+  </div>
+
   <div class="search-wrap">
     <span class="search-icon">🔍</span>
     <input class="search-input" id="group-search" type="text" placeholder="Tìm nhóm..." oninput="filterGroups(this.value)">
@@ -505,78 +1100,120 @@
   <div id="groups-container" class="groups-grid"></div>
 </div>
 
+
+<!-- SERVICES (Dịch vụ khác) -->
+<div class="section" id="tab-services">
+  <div class="section-header">
+    <div class="section-title">Dịch vụ khác</div>
+    <div class="section-rule"></div>
+  </div>
+  <div class="services-grid" id="services-container"></div>
+</div>
+
 <!-- INFO -->
 <div class="section" id="tab-info">
   <div class="section-header">
-    <div class="section-title">Quy định & lưu ý</div>
+    <div class="section-title">Quyền lợi & Quy định</div>
     <div class="section-rule"></div>
   </div>
 
   <div class="info-grid">
 
-    <div class="info-card">
-      <div class="info-card-title">Lịch sale — được đăng 2 bài/ngày</div>
-      <div class="sale-wrap">
-        <span class="sale-tag">Ngày đôi (1/1, 2/2...)</span>
-        <span class="sale-tag">Black Friday</span>
-        <span class="sale-tag">14/02 Valentine</span>
-        <span class="sale-tag">08/03</span>
-        <span class="sale-tag">20/10</span>
-        <span class="sale-tag">Joie ra BST mới</span>
+    <!-- QUYỀN LỢI -->
+    <div class="info-card" style="border-left: 3px solid var(--gold);">
+      <div class="info-card-title">QUYỀN LỢI</div>
+
+      <div class="info-subsection">
+        <div class="info-sub-title">Huy hiệu chuyên gia</div>
+        <p>Team sẽ cấp huy hiệu chuyên gia cho các bạn thuê nhóm sau khi thanh toán và xác nhận thành công.</p>
+      </div>
+
+      <div class="info-subsection">
+        <div class="info-sub-title">Lịch sale — Nhóm đăng 1 bài/ngày được đăng 2 bài/ngày</div>
+        <div class="sale-wrap">
+          <span class="sale-tag">Ngày đôi (1/1, 2/2...)</span>
+          <span class="sale-tag">Black Friday</span>
+          <span class="sale-tag">Joie ra BST mới</span>
+        </div>
+        <p style="margin-top:0.8rem; font-size:var(--fs-s); color:var(--muted); font-style:italic;">* Các nhóm khác giữ nguyên số lượng bài viết</p>
+      </div>
+
+      <div class="info-subsection">
+        <div class="info-sub-title">Khi bị thành viên khác rải link affiliate</div>
+        <p>Hệ thống report đang quá tải, đôi khi không load được người đăng và bình luận. Để xóa nick rải link chùa nhanh chóng, hãy <strong>gửi link bài viết</strong> cho team — QTV sẽ xóa và cấm người rải link ngay lập tức.</p>
+      </div>
+
+      <div class="info-subsection">
+        <div class="info-sub-title">Khi bài bị Facebook đánh spam</div>
+        <p>Với tần suất đăng bài cao, KOL/KOC dễ bị Facebook đánh spam. Chỉ cần nhắn với QTV để được duyệt bài bằng tay.</p>
       </div>
     </div>
 
+    <!-- QUY ĐỊNH -->
     <div class="info-card" style="border-left: 3px solid var(--rose-deep);">
-      <div class="info-card-title">Quan trọng — Nhà bán hàng & KOL/KOC đăng link</div>
-      <ul>
-        <li>Đối với nhà bán hàng hoặc KOL/KOC muốn đăng bài có gắn link trực tiếp trên bài viết, giá thuê nhóm sẽ tính theo mức <strong>3 bài / ngày</strong></li>
-        <li>Ví dụ: nhóm 🌸 Joie Des Roses - Thanh lý và Trao đổi → <strong>1.000.000₫ / tháng</strong></li>
-        <li>Vui lòng liên hệ QTV để được tư vấn và xác nhận trước khi đăng bài có link</li>
-      </ul>
-    </div>
+      <div class="info-card-title">QUY ĐỊNH</div>
 
-    <div class="info-card">
-      <div class="info-card-title">Xóa và đăng lại bài</div>
-      <ul>
-        <li>Nếu xóa bài và đăng lại phải thông báo cho team trước</li>
-        <li>Không thông báo sẽ bị tính là gian lận để đăng nhiều bài hơn</li>
-        <li>Hình thức xử lý: đình chỉ 7, 14, 28 ngày hoặc cấm vĩnh viễn không hoàn trả phí thuê</li>
-      </ul>
-    </div>
+      <div class="info-subsection">
+        <div class="info-sub-title">Quan trọng — Nhà bán hàng & KOL/KOC đăng link</div>
+        <ul>
+          <li>Đối với nhà bán hàng hoặc KOL/KOC muốn đăng bài có gắn link trực tiếp trên bài viết, giá thuê nhóm sẽ tính theo mức <strong>3 bài / ngày</strong></li>
+          <li>Ví dụ: nhóm 🌸 Joie Des Roses - Thanh lý và Trao đổi → <strong>1.250.000₫ / tháng đăng 1 bài / ngày</strong></li>
+          <li>Vui lòng liên hệ QTV để được tư vấn và chỉ nhận bán hàng những mặt hàng đúng phong cách nhóm</li>
+        </ul>
+      </div>
 
-    <div class="info-card">
-      <div class="info-card-title">Tuyệt đối không</div>
-      <ul>
-        <li>Không đăng bằng chế độ ẩn danh — có thể mất toàn bộ bài và bị cấm khỏi nhóm</li>
-        <li>Không đăng link TikTok</li>
-        <li>Không đăng link dưới từng ảnh (caption ảnh)</li>
-        <li>Không spam link vào bài của các thành viên khác trong nhóm — chỉ được bình luận ở bài viết của chính mình</li>
-        <li>Vi phạm: đình chỉ 7, 14, 28 ngày hoặc cấm vĩnh viễn không hoàn trả phí thuê</li>
-      </ul>
-    </div>
+      <div class="info-subsection">
+        <div class="info-sub-title">Huỷ gia hạn và đổi nhóm</div>
+        <ul>
+          <li>Trong trường hợp bạn muốn ngưng thuê, team sẽ <strong>KHÔNG hoàn trả phí thuê</strong> dưới bất kỳ hình thức nào</li>
+          <li>Trong quá trình làm việc, team sẽ hỗ trợ đổi nhóm nếu bạn có nhu cầu. Phí nhóm đầu thuê sẽ được tính là <strong>50.000₫ / ngày</strong></li>
+          <li>Khi bạn vi phạm quy định, team sẽ quyết định việc có <strong>huỷ hợp tác</strong> hay không</li>
+        </ul>
+      </div>
 
-    <div class="info-card">
-      <div class="info-card-title">Khi bị report / spam</div>
-      <p>Hệ thống report đang quá tải, không load được người đăng và bình luận. Để xóa nick spam nhanh nhất, hãy <strong>gửi link bài viết</strong> cho team — QTV sẽ xóa và cấm người spam ngay lập tức.</p>
-    </div>
+      <div class="info-subsection">
+        <div class="info-sub-title">Nội dung bài đăng & bình luận</div>
+        <ul>
+          <li><strong>Tuân thủ chính sách Facebook về quyền riêng tư:</strong>
+            <ul style="margin-top:0.5rem;">
+              <li>Không chia sẻ thông tin cá nhân của bất kỳ ai (SĐT, địa chỉ, giấy tờ tùy thân, số tài khoản, thẻ tín dụng/ghi nợ)</li>
+              <li><strong>Cấm đăng tải hoặc bình luận ảnh có chứa mã QR</strong> (bao gồm QR chuyển khoản, QR Zalo, QR mã giảm giá...)</li>
+            </ul>
+          </li>
+          <li><strong>Link phải đúng sản phẩm</strong> — không gắn link lung tung, không đúng nội dung bài viết, không dùng tiêu đề kiểu câu click</li>
+          <li><strong>Không đăng link dưới từng ảnh (caption ảnh)</strong></li>
+          <li><strong>Bình luận link aff dưới ảnh:</strong> KOL được phép bình luận link aff vào từng ảnh trong bài của mình, nhưng <strong>mỗi bài tối đa 4 ảnh</strong>. Vượt quá 4 ảnh sẽ <strong>đình chỉ 14 ngày</strong> (không cần biết có gắn link bình luận dưới mỗi ảnh hay không, xoá ảnh để đăng lại link sẽ tính là vi phạm)</li>
+          <li><strong>Bình luận link aff vào bài người khác:</strong>
+            <ul style="margin-top:0.5rem;">
+              <li>Chỉ được comment vào <strong>bài tìm đồ</strong> của thành viên khác (gợi ý sản phẩm phù hợp)</li>
+              <li>Cấm spam link không liên quan (ví dụ: link mã giảm giá, link sản phẩm không phù hợp với bài hỏi)</li>
+              <li><strong>TUYỆT ĐỐI</strong> không bình luận vào bài của KOL khác (bài có tag <em>chuyên gia</em>)</li>
+            </ul>
+          </li>
+          <li><strong>Báo cáo tài khoản lạ:</strong> Khi thấy tài khoản <strong>không có tag chuyên gia</strong> đăng bài/comment link trong nhóm, hãy báo QTV ngay — team sẽ kiểm tra và cấm khỏi nhóm lập tức</li>
+          <li><strong>Không đăng ẩn danh:</strong> Tuyệt đối không dùng chế độ ẩn danh — team không check được tên nick, sẽ bị <strong>mất toàn bộ bài trong 7 ngày gần đây</strong> và có thể bị cấm khỏi nhóm</li>
+          <li><strong>Xóa và đăng lại bài:</strong> Phải thông báo team trước. Không thông báo sẽ bị tính là gian lận đăng nhiều bài</li>
+          <li><strong>Hình thức xử lý vi phạm:</strong> đình chỉ 7 / 14 / 28 ngày hoặc <strong>cấm vĩnh viễn, không hoàn trả phí thuê</strong></li>
+        </ul>
+      </div>
 
-    <div class="info-card">
-      <div class="info-card-title">Khi bài bị Facebook đánh spam</div>
-      <p>Với tần suất đăng bài cao, KOL/KOC dễ bị Facebook đánh spam. Chỉ cần nhắn với QTV để được duyệt bài bằng tay.</p>
-    </div>
+      <div class="info-subsection">
+        <div class="info-sub-title">Đoàn kết</div>
+        <ul>
+          <li>Các KOL nên bảo vệ nhau, tránh gây war trong nhóm</li>
+          <li>Nếu có trường hợp copy bài viết của nhau, các KOL <strong>tự liên hệ nhau để giải quyết</strong>. Nếu không giải quyết được riêng tư, QTV sẽ <strong>xoá bài đăng sau</strong> (bất kỳ copy nguồn nào)</li>
+          <li>Trường hợp dùng ảnh của KOL khác đã có <strong>CHÈN TÊN BẢN QUYỀN</strong>, khi bị báo cáo, QTV sẽ <strong>xoá bài và đình chỉ KOL vi phạm 7 ngày</strong></li>
+        </ul>
+      </div>
 
-    <div class="info-card">
-      <div class="info-card-title">Huy hiệu chuyên gia</div>
-      <p>Team sẽ cấp huy hiệu chuyên gia cho các bạn thuê nhóm sau khi thanh toán và xác nhận thành công.</p>
-    </div>
-
-    <div class="info-card">
-      <div class="info-card-title">Từ khóa cấm — bài viết & bình luận</div>
-      <p style="margin-bottom:0.8rem;">Bài viết hoặc bình luận có những từ sau sẽ bị gỡ tự động và tài khoản bị đình chỉ:</p>
-      <div class="keywords-wrap">
+      <div class="info-subsection">
+        <div class="info-sub-title">Từ khóa cấm — bài viết & bình luận</div>
+        <p style="margin-bottom:0.8rem;">Bài viết hoặc bình luận có những từ sau sẽ bị gỡ tự động:</p>
+        <div class="keywords-wrap">
         <span class="kw-tag">#order</span>
         <span class="kw-tag">#xuattinhsom</span>
         <span class="kw-tag">A DI ĐÀ PHẬT</span>
+        <span class="kw-tag">Betti</span>
         <span class="kw-tag">CHUỘT</span>
         <span class="kw-tag">Có nha</span>
         <span class="kw-tag">E có ạ</span>
@@ -596,17 +1233,30 @@
         <span class="kw-tag">THƯƠNG QUÁ</span>
         <span class="kw-tag">V.Ố.N</span>
         <span class="kw-tag">XTS</span>
+        <span class="kw-tag">XUẤT TINH</span>
         <span class="kw-tag">anh chị</span>
         <span class="kw-tag">b.i.p</span>
+        <span class="kw-tag">bank</span>
+        <span class="kw-tag">betti</span>
+        <span class="kw-tag">buồi</span>
         <span class="kw-tag">bẫy chuột</span>
         <span class="kw-tag">bịp</span>
+        <span class="kw-tag">cave</span>
         <span class="kw-tag">chuột</span>
         <span class="kw-tag">chị em</span>
         <span class="kw-tag">chị em ơi</span>
+        <span class="kw-tag">chén rau</span>
         <span class="kw-tag">clip</span>
+        <span class="kw-tag">cmt</span>
+        <span class="kw-tag">con đĩ</span>
+        <span class="kw-tag">credit card</span>
         <span class="kw-tag">có hàng sẵn ạ</span>
         <span class="kw-tag">có sẵn nha</span>
+        <span class="kw-tag">cần người</span>
+        <span class="kw-tag">dương vật</span>
         <span class="kw-tag">dưới cmt</span>
+        <span class="kw-tag">dẫn trai</span>
+        <span class="kw-tag">dắt trai</span>
         <span class="kw-tag">e có hàng</span>
         <span class="kw-tag">e có ạ</span>
         <span class="kw-tag">e sẵn ạ</span>
@@ -617,24 +1267,51 @@
         <span class="kw-tag">giúp đỡ</span>
         <span class="kw-tag">gõ tài liệu</span>
         <span class="kw-tag">gõ văn bản</span>
+        <span class="kw-tag">huyen anh</span>
+        <span class="kw-tag">khách sạn</span>
         <span class="kw-tag">khó khăn</span>
+        <span class="kw-tag">ké mẫu này</span>
+        <span class="kw-tag">ké mẫu này với ạ</span>
         <span class="kw-tag">l.i.n.k</span>
+        <span class="kw-tag">leak</span>
         <span class="kw-tag">li..nk</span>
         <span class="kw-tag">lin..k</span>
         <span class="kw-tag">link</span>
+        <span class="kw-tag">lì xì</span>
+        <span class="kw-tag">lồn</span>
+        <span class="kw-tag">lộ</span>
+        <span class="kw-tag">made by thuy linh</span>
         <span class="kw-tag">mình sẵn giá tốt</span>
         <span class="kw-tag">n.ợ</span>
+        <span class="kw-tag">nghĩ hè</span>
+        <span class="kw-tag">nhiệm vụ</span>
+        <span class="kw-tag">nhận quà</span>
         <span class="kw-tag">nợ</span>
         <span class="kw-tag">od đủ sz</span>
         <span class="kw-tag">order</span>
+        <span class="kw-tag">phò</span>
+        <span class="kw-tag">quét mã</span>
+        <span class="kw-tag">quét để</span>
+        <span class="kw-tag">rau non</span>
         <span class="kw-tag">rẻ lắm</span>
+        <span class="kw-tag">sex</span>
         <span class="kw-tag">sim</span>
+        <span class="kw-tag">sẵn</span>
         <span class="kw-tag">sẵn ạ</span>
         <span class="kw-tag">số đề</span>
+        <span class="kw-tag">thuy linh</span>
         <span class="kw-tag">thường quân</span>
+        <span class="kw-tag">tiểu tam</span>
+        <span class="kw-tag">truy cập link</span>
         <span class="kw-tag">video clip</span>
+        <span class="kw-tag">về nhà</span>
+        <span class="kw-tag">zalo</span>
+        <span class="kw-tag">âm hộ</span>
+        <span class="kw-tag">đéo</span>
+        <span class="kw-tag">đĩ</span>
         <span class="kw-tag">🆘️🆘️🆘</span>
         <span class="kw-tag">🙏🙏🙏</span>
+        </div>
       </div>
     </div>
 
@@ -649,17 +1326,17 @@
   </div>
 
   <div class="payment-card">
-    <div class="payment-bank-name">VPBANK</div>
-    <div class="payment-stk">999818999</div>
+    <div class="payment-bank-name">MBBANK (NH QUÂN ĐỘI)</div>
+    <div class="payment-stk">0368968497</div>
     <div class="payment-name">HOANG LAN PHUONG</div>
     <div style="margin-top:1.5rem">
-      <img src="qr-payment.png" alt="QR VPBank" loading="lazy" style="width:200px;height:200px;object-fit:contain;border-radius:8px">
+      <img src="qr-payment.png" alt="QR MBBank" loading="lazy" style="width:200px;height:200px;object-fit:contain;border-radius:8px">
     </div>
     <button class="copy-btn" onclick="copySTK()">SAO CHÉP SỐ TÀI KHOẢN</button>
   </div>
 
   <div class="note-gold" style="margin-bottom:1.5rem">
-    Nội dung chuyển khoản: Ghi <strong>tên nick Facebook</strong> muốn thuê nhóm. Sau khi thanh toán, gửi link nick thuê cho QTV để được kích hoạt và cấp huy hiệu chuyên gia.
+    Nội dung chuyển khoản: <strong>CHỈ GHI tên nick Facebook muốn thuê nhóm</strong> (Không ghi gì thêm). Sau khi thanh toán, gửi link nick thuê cho QTV để được kích hoạt và cấp huy hiệu chuyên gia.
   </div>
 
   <div class="info-card">
@@ -681,14 +1358,20 @@
   </div>
 
   <div class="info-card" style="text-align:center;padding:3rem">
-    <div class="info-card-title" style="justify-content:center">Liên hệ QTV</div>
+    <div class="info-card-title" style="justify-content:center">Chỉ dành cho KOL/KOC & Nhà bán hàng đăng ký thuê nhóm</div>
     <p style="color:var(--muted);line-height:2.5;margin-bottom:1.5rem">
-      Để được hỗ trợ nhanh nhất, vui lòng liên hệ qua <strong style="color:var(--rose-deep)">Zalo</strong> hoặc quét mã QR bên dưới.
+      Để được hỗ trợ nhanh chóng, vui lòng liên hệ qua <strong style="color:var(--rose-deep)">Zalo</strong> hoặc quét mã QR bên dưới.
     </p>
     <img src="qr-contact.png" alt="Zalo QR" loading="lazy" style="width:200px;height:200px;object-fit:contain;border-radius:12px;border:1px solid var(--border);margin-bottom:1rem">
     <p style="color:var(--rose-deep);font-weight:500;letter-spacing:0.05em">Chloe · 0368 968 497</p>
   </div>
 </div>
+
+<a href="https://zalo.me/0368968497" target="_blank" class="zalo-fab" aria-label="Chat Zalo với Timeless">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
+    <path d="M12 2C6.48 2 2 6.02 2 10.96c0 2.72 1.36 5.16 3.5 6.82v3.72l3.4-1.94c1 .25 2.05.38 3.1.38 5.52 0 10-4.02 10-8.98S17.52 2 12 2z"/>
+  </svg>
+</a>
 
 <footer>
   <div class="footer-tagline">Cảm ơn bạn đã tin tưởng và đồng hành cùng Timeless 🤝</div>
@@ -699,111 +1382,197 @@
     {
       emoji: '🌸',
       name: 'Joie Des Roses - Thanh lý và Trao đổi',
-      members: '200.000 thành viên',
+      members: '215.000 thành viên',
       link: 'https://www.facebook.com/groups/joiedesroses/',
-      prices: { '1 bài / ngày': '550.000₫', '2 bài / ngày': '850.000₫', '3 bài / ngày': '1.000.000₫' }
+      hot: true,
+      prices: { '1 bài / ngày': '550.000₫', '2 bài / ngày': '900.000₫', '3 bài / ngày': '1.250.000₫' }
     },
     {
       emoji: '🌸',
       name: 'Thanh lý Joie Des Roses',
-      members: '125.000 thành viên',
+      members: '135.000 thành viên',
       link: 'https://www.facebook.com/groups/joiedesrosesthanhly/',
+      hot: true,
       prices: { '1 bài / ngày': '500.000₫', '2 bài / ngày': '750.000₫', '3 bài / ngày': '1.000.000₫' }
     },
     {
       emoji: '🌸',
       name: 'By Cún - Thanh lý và Trao đổi',
-      members: '55.000 thành viên',
+      members: '70.000 thành viên',
       link: 'https://www.facebook.com/groups/thanhlylibre/',
+      hot: true,
       prices: { '1 bài / ngày': '500.000₫', '2 bài / ngày': '750.000₫', '3 bài / ngày': '1.000.000₫' }
     },
     {
       emoji: '🌸',
-      name: 'JOIE DES ROSES - Thanh Lý Và Trao Đổi',
+      name: 'LSOUL - Thanh lý và Trao đổi',
+      members: '115.000 thành viên',
+      link: 'https://www.facebook.com/groups/lseoul/',
+      hot: true,
+      prices: { '1 bài / ngày': '500.000₫', '2 bài / ngày': '750.000₫', '3 bài / ngày': '1.000.000₫' }
+    },
+    {
+      emoji: '🌸',
+      name: 'Thanh lý By Cún - Joie Des Roses - Betti Club',
       members: '185.000 thành viên',
       link: 'https://www.facebook.com/groups/outfitoftheday.vn/',
       prices: { '1 bài / ngày': '250.000₫', '2 bài / ngày': '400.000₫', '3 bài / ngày': '500.000₫' }
     },
     {
       emoji: '🌸',
-      name: 'Gossip Thời Trang',
+      name: 'Ara Store - Thanh lý và Trao đổi',
       members: '65.000 thành viên',
       link: 'https://www.facebook.com/groups/thanhlydocongso/',
       prices: { '1 bài / ngày': '250.000₫', '2 bài / ngày': '400.000₫', '3 bài / ngày': '500.000₫' }
     },
     {
       emoji: '🌸',
-      name: 'méli - thanh lý và trao đổi',
+      name: 'Méli - Thanh lý và Trao đổi',
       members: '10.000 thành viên',
       link: 'https://www.facebook.com/groups/melithanhly/',
       prices: { '1 bài / ngày': '100.000₫', '2 bài / ngày': '200.000₫', '3 bài / ngày': '250.000₫' }
     },
     {
-      emoji: '🔴',
-      name: 'THANH LÝ LSOUL',
-      members: '100.000 thành viên',
-      link: 'https://www.facebook.com/groups/lseoul/',
-      prices: { '1 bài / ngày': '500.000₫', '2 bài / ngày': '750.000₫', '3 bài / ngày': '1.000.000₫' }
-    },
-    {
-      emoji: '🔴',
-      name: 'THANH LÝ ONONMM',
+      emoji: '🌸',
+      name: 'ONONMM - Thanh lý và Trao đổi',
       members: '25.000 thành viên',
       link: 'https://www.facebook.com/groups/ononmade/',
       prices: { '1 bài / ngày': '250.000₫', '2 bài / ngày': '400.000₫', '3 bài / ngày': '500.000₫' }
     },
     {
-      emoji: '🔴',
-      name: 'THANH LÝ VEOS - VEOS BY KHANH',
-      members: '30.000 thành viên',
+      emoji: '🌸',
+      name: 'Thanh lý Veos - Veos by Khanh',
+      members: '35.000 thành viên',
       link: 'https://www.facebook.com/groups/veosbykhanh/',
       prices: { '1 bài / ngày': '250.000₫', '2 bài / ngày': '400.000₫', '3 bài / ngày': '500.000₫' }
     },
     {
-      emoji: '🔴',
-      name: 'THANH LÝ AMELIE',
-      members: '15.000 thành viên',
+      emoji: '🌸',
+      name: 'Amelie - Thanh lý và Trao đổi',
+      members: '20.000 thành viên',
       link: 'https://www.facebook.com/groups/thanhlyamelie/',
       prices: { '1 bài / ngày': '250.000₫', '2 bài / ngày': '400.000₫', '3 bài / ngày': '500.000₫' }
     },
     {
-      emoji: '🔴',
-      name: 'THANH LÝ H2B À LA MODE',
+      emoji: '🌸',
+      name: 'H2B à La Mode - Thanh lý và Trao đổi',
       members: '10.000 thành viên',
       link: 'https://www.facebook.com/groups/thanhlyh2bcolin/',
       prices: { '1 bài / ngày': '100.000₫', '2 bài / ngày': '200.000₫', '3 bài / ngày': '250.000₫' }
     },
     {
-      emoji: '🔴',
-      name: 'THANH LÝ TRIO JI',
+      emoji: '🌸',
+      name: 'Trio Ji - Thanh lý và Trao đổi',
       members: '10.000 thành viên',
       link: 'https://www.facebook.com/groups/trioji/',
+      prices: { '1 bài / ngày': '100.000₫', '2 bài / ngày': '200.000₫', '3 bài / ngày': '250.000₫' }
+    },
+    {
+      emoji: '🌸',
+      name: 'WHITE ANT - Thanh lý và Trao đổi',
+      members: '10.000 thành viên',
+      link: 'https://www.facebook.com/groups/thanhlyelpis/',
+      prices: { '1 bài / ngày': '100.000₫', '2 bài / ngày': '200.000₫', '3 bài / ngày': '250.000₫' }
+    },
+    {
+      emoji: '🌸',
+      name: 'Lane JT - Thanh lý và Trao đổi',
+      members: '10.000 thành viên',
+      link: 'https://www.facebook.com/groups/luxurybrandvietnam/',
       prices: { '1 bài / ngày': '100.000₫', '2 bài / ngày': '200.000₫', '3 bài / ngày': '250.000₫' }
     }
   ];
 
   function renderGroups(data) {
     const container = document.getElementById('groups-container');
-    container.innerHTML = data.map(g => `
-      <div class="group-card">
+    container.innerHTML = data.map(g => {
+      const threeDay = g.prices['3 bài / ngày'] || '';
+      return `
+      <div class="group-card${g.hot ? ' hot' : ''}">
+        ${g.hot ? '<span class="group-hot-badge">🔥 Thuê nhiều</span>' : ''}
         <span class="group-emoji">${g.emoji}</span>
         <div class="group-name">${g.name}</div>
         <div class="group-members">${g.members}</div>
-        <div class="group-prices">
-          ${Object.entries(g.prices).map(([label, val]) => `
-            <div class="price-row">
-              <span class="price-label">${label}</span>
-              <span class="price-value">${val}</span>
+        <div class="price-tiers">
+          <div class="price-tier highlight">
+            <div class="price-tier-label">KOL gắn link affiliate ở CMT</div>
+            <div class="price-tier-body">
+              ${Object.entries(g.prices).map(([label, val]) => `
+                <div class="price-tier-row"><span class="lbl">${label}</span><span class="val">${val}</span></div>
+              `).join('')}
             </div>
-          `).join('')}
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-label">Nhà bán hàng · PR & Khác</div>
+            <div class="price-tier-body">
+              <div class="price-tier-row"><span class="lbl">1 bài / ngày</span><span class="val">${threeDay}</span></div>
+              <div class="price-tier-row"><span class="lbl">Ghim ảnh bìa, PR & Khác</span><span class="val">Liên hệ QTV</span></div>
+            </div>
+          </div>
         </div>
         <a href="${g.link}" target="_blank" class="group-link">Truy cập nhóm</a>
       </div>
-    `).join('');
+    `;
+    }).join('');
   }
 
   renderGroups(groups);
   document.getElementById('stat-groups').textContent = groups.length;
+
+  const services = [
+    {
+      name: 'Duyệt bài nhanh',
+      desc: 'Bài viết được duyệt ưu tiên, không cần chờ hàng đợi',
+      price: '50.000₫',
+      unit: '/ bài',
+      note: null
+    },
+    {
+      name: 'Bỏ cấm',
+      desc: 'Gỡ lệnh cấm khỏi nhóm cho tài khoản bị vi phạm',
+      price: '250.000₫',
+      unit: '/ lần đầu, nếu tiếp tục vi phạm phí sẽ x2',
+      note: 'Với KOL / nhà bán hàng đang thuê nhóm nếu cố ý vi phạm, phí từ 200.000₫ (Tuỳ mức độ nghiêm trọng sẽ huỷ hợp tác)'
+    },
+    {
+      name: 'Bỏ đình chỉ',
+      desc: 'Gỡ trạng thái đình chỉ để tiếp tục đăng bài',
+      price: '250.000₫',
+      unit: '/ lần đầu, nếu tiếp tục vi phạm phí sẽ x2',
+      note: 'Với KOL / nhà bán hàng đang thuê nhóm nếu cố ý vi phạm, phí từ 200.000₫ (Tuỳ mức độ nghiêm trọng sẽ huỷ hợp tác)'
+    },
+    {
+      name: 'Check ẩn danh',
+      desc: 'Kiểm tra tài khoản đăng bài ẩn danh trong nhóm',
+      price: '250.000₫',
+      unit: '/ lần',
+      note: null
+    },
+    {
+      name: 'Gỡ bài',
+      desc: 'Team kiểm tra lại nội dung và tiến hành gỡ bài nếu bài viết sai sự thật hoặc công kích cá nhân',
+      price: 'Miễn phí',
+      unit: '',
+      note: null
+    }
+  ];
+
+  function renderServices(data) {
+    const container = document.getElementById('services-container');
+    container.innerHTML = data.map(s => `
+      <div class="service-card">
+        <div class="service-name">${s.name}</div>
+        <div class="service-desc">${s.desc}</div>
+        <div class="service-price-row">
+          <span class="service-price-label">${s.unit}</span>
+          <span class="service-price-value">${s.price}</span>
+        </div>
+        ${s.note ? `<div class="service-note">${s.note}</div>` : ''}
+      </div>
+    `).join('');
+  }
+
+  renderServices(services);
 
   // SAKURA FALLING EFFECT
   const canvas = document.getElementById('sakura-canvas');
@@ -816,10 +1585,21 @@
   resize();
   window.addEventListener('resize', resize);
 
-  const petals = [];
-  const PETAL_COUNT = 50;
-  const PETAL = '🌸';
+  const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const IS_MOBILE = window.innerWidth < 700;
+  const PETAL_COUNT = REDUCED_MOTION ? 0 : (IS_MOBILE ? 25 : 40);
+  const PETAL_BASE = 40;
 
+  const petalCache = document.createElement('canvas');
+  petalCache.width = PETAL_BASE;
+  petalCache.height = PETAL_BASE;
+  const pctx = petalCache.getContext('2d');
+  pctx.font = (PETAL_BASE - 10) + 'px serif';
+  pctx.textAlign = 'center';
+  pctx.textBaseline = 'middle';
+  pctx.fillText('🌸', PETAL_BASE / 2, PETAL_BASE / 2);
+
+  const petals = [];
   for (let i = 0; i < PETAL_COUNT; i++) {
     petals.push({
       x: Math.random() * window.innerWidth,
@@ -827,8 +1607,8 @@
       size: Math.random() * 10 + 15,
       speedY: Math.random() * 0.6 + 0.6,
       speedX: Math.random() * 0.4 - 0.2,
-      rotation: Math.random() * 360,
-      rotSpeed: (Math.random() - 0.5) * 0.4,
+      rotation: Math.random() * Math.PI * 2,
+      rotSpeed: (Math.random() - 0.5) * 0.007,
       opacity: Math.random() * 0.20 + 0.25,
       sway: Math.random() * 0.3,
       swayOffset: Math.random() * Math.PI * 2
@@ -836,30 +1616,34 @@
   }
 
   let frame = 0;
+  let animId = null;
   function animate() {
+    if (document.hidden) { animId = null; return; }
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     frame++;
-    petals.forEach(p => {
+    const h = canvas.height;
+    const w = canvas.width;
+    for (let i = 0; i < petals.length; i++) {
+      const p = petals[i];
       p.y += p.speedY;
       p.x += p.speedX + Math.sin(frame * 0.01 + p.swayOffset) * p.sway;
       p.rotation += p.rotSpeed;
-      if (p.y > canvas.height + 20) {
-        p.y = -20;
-        p.x = Math.random() * canvas.width;
-      }
-      ctx.save();
+      if (p.y > h + 20) { p.y = -20; p.x = Math.random() * w; }
+      const s = p.size / PETAL_BASE;
+      const cos = Math.cos(p.rotation) * s;
+      const sin = Math.sin(p.rotation) * s;
+      ctx.setTransform(cos, sin, -sin, cos, p.x, p.y);
       ctx.globalAlpha = p.opacity;
-      ctx.translate(p.x, p.y);
-      ctx.rotate(p.rotation * Math.PI / 180);
-      ctx.font = `${p.size}px serif`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(PETAL, 0, 0);
-      ctx.restore();
-    });
-    requestAnimationFrame(animate);
+      ctx.drawImage(petalCache, -PETAL_BASE / 2, -PETAL_BASE / 2);
+    }
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.globalAlpha = 1;
+    animId = requestAnimationFrame(animate);
   }
-  animate();
+  if (PETAL_COUNT > 0) animate();
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden && animId === null && PETAL_COUNT > 0) animate();
+  });
 
   function filterGroups(query) {
     const q = query.toLowerCase().trim();
@@ -874,9 +1658,21 @@
     el.classList.add('active');
   }
 
+  function togglePromoMore() {
+    const more = document.getElementById('promo-more');
+    const btn = document.getElementById('promo-more-btn');
+    if (more.hidden) {
+      more.hidden = false;
+      btn.textContent = 'Thu gọn ↑';
+    } else {
+      more.hidden = true;
+      btn.textContent = 'Xem thêm 8 nhóm ↓';
+    }
+  }
+
   function copySTK() {
-    navigator.clipboard.writeText('999818999').then(() => {
-      alert('ĐÃ SAO CHÉP SỐ TÀI KHOẢN: 999818999');
+    navigator.clipboard.writeText('0368968497').then(() => {
+      alert('ĐÃ SAO CHÉP SỐ TÀI KHOẢN: 0368968497');
     });
   }
 

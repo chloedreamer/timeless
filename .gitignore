@@ -1,0 +1,5 @@
+.vercel
+_backups/
+*.backup-*
+.DS_Store
+.claude/

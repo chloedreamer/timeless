@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dịch vụ khác | TIMELESS — Bỏ cấm, gỡ bài, check ẩn danh</title>
+<meta name="description" content="Dịch vụ hỗ trợ thành viên TIMELESS: bỏ cấm, bỏ đình chỉ, gỡ bài viết, check tài khoản ẩn danh. Liên hệ QTV Zalo 0368 968 497.">
+<meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="PhNVNxzqEZSTrNUypVdY7yA4LwFyYvGhY8r9brpRLXY">
+<link rel="canonical" href="https://timeless-vn.vercel.app/dich-vu.html">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://timeless-vn.vercel.app/dich-vu.html">
+<meta property="og:title" content="TIMELESS · Dịch vụ hỗ trợ thành viên">
+<meta property="og:description" content="Bỏ cấm, gỡ bài, check ẩn danh và các dịch vụ hỗ trợ khác cho thành viên nhóm.">
+<meta property="og:image" content="https://timeless-vn.vercel.app/og-image.png">
+<meta property="og:locale" content="vi_VN">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TLEFLKYQK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0TLEFLKYQK');
+</script>
+<style>
+  :root {
+    --rose: #c8a0a0;
+    --rose-deep: #9b6b6b;
+    --rose-light: #f5eded;
+    --rose-bg: #faf5f5;
+    --gold: #b8976a;
+    --muted: #7a6a6a;
+    --dark: #2a1f1f;
+    --border: #e8dede;
+    --white: #ffffff;
+
+    --fs-xl: 1.8rem;
+    --fs-l: 15px;
+    --fs-m: 13px;
+    --fs-s: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    background: var(--rose-bg);
+    color: var(--dark);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: linear-gradient(135deg, #f5eded 0%, #fdf8f8 50%, #f5eded 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-brand {
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 200;
+    color: var(--rose-deep);
+    letter-spacing: 0.35em;
+    line-height: 1;
+    margin-bottom: 0.8rem;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  .header-tagline {
+    font-size: var(--fs-s);
+    letter-spacing: 0.05em;
+    color: var(--rose-deep);
+    text-align: center;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--rose-light);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow-x: auto;
+  }
+
+  .nav-tab {
+    font-size: var(--fs-m);
+    letter-spacing: 0.05em;
+    padding: 1rem 1.5rem;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.3s;
+  }
+
+  .nav-tab:hover { color: var(--rose-deep); }
+  .nav-tab.active { color: var(--rose-deep); border-bottom-color: var(--rose-deep); font-weight: 500; }
+
+  /* SECTIONS */
+  .section { display: none; max-width: 1000px; margin: 0 auto; padding: 3rem 1.5rem; }
+  .section.active { display: block; }
+
+  .section-header { text-align: center; margin-bottom: 2.5rem; }
+
+  .section-title {
+    font-size: var(--fs-xl);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: var(--rose-deep);
+    margin-bottom: 0.8rem;
+  }
+
+  .section-rule { width: 36px; height: 1px; background: var(--rose); margin: 0 auto; }
+
+  /* SERVICE CARDS */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 1.8rem 1.5rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--rose-deep);
+    transition: width 0.4s;
+  }
+
+  .service-card:hover { box-shadow: 0 16px 48px rgba(155,107,107,0.1); transform: translateY(-3px); }
+  .service-card:hover::after { width: 100%; }
+
+  .service-name {
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
+  }
+
+  .service-desc {
+    font-size: var(--fs-m);
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+
+  .service-price-row {
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .service-price-label { font-size: var(--fs-m); color: var(--muted); }
+  .service-price-value { font-size: var(--fs-l); font-weight: 600; color: var(--rose-deep); }
+
+  .service-note {
+    font-size: var(--fs-m);
+    color: var(--rose);
+    margin-top: 0.6rem;
+  }
+
+  /* PAYMENT */
+  .payment-card {
+    background: var(--rose-light);
+    border: 1px solid var(--border);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .payment-bank-name {
+    font-size: var(--fs-l);
+    font-weight: 400;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .payment-stk {
+    font-size: var(--fs-l);
+    font-weight: 400;
+    color: var(--muted);
+    margin: 0.4rem 0;
+    letter-spacing: 0.05em;
+  }
+
+  .payment-name {
+    font-size: var(--fs-l);
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  .copy-btn {
+    margin-top: 1.2rem;
+    background: var(--rose-light);
+    border: 1px solid var(--border);
+    color: var(--rose-deep);
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    font-size: var(--fs-m);
+    letter-spacing: 0.05em;
+    padding: 0.6rem 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(155,107,107,0.12);
+  }
+
+  .copy-btn:hover { background: var(--rose-deep); color: white; box-shadow: 0 4px 12px rgba(155,107,107,0.2); }
+
+  .note-gold {
+    background: var(--rose-light);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    padding: 1rem 1.5rem;
+    font-size: var(--fs-l);
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .info-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 1.8rem;
+  }
+
+  .info-card-title {
+    font-size: var(--fs-l);
+    font-weight: 600;
+    color: var(--rose-deep);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .info-card-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .info-card p, .info-card li {
+    font-size: var(--fs-l);
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  .info-card ul { list-style: none; padding: 0; }
+  .info-card ul li { padding-left: 1.2rem; position: relative; }
+  .info-card ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--rose);
+    font-weight: bold;
+  }
+  .info-card ul ul { padding-left: 1rem; margin-top: 0.4rem; }
+  .info-card ul ul li::before { content: '–'; font-weight: normal; }
+
+  /* CHERRY BLOSSOM */
+  #sakura-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.45;
+  }
+
+  footer {
+    background: var(--rose-light);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+  }
+
+  .footer-tagline {
+    font-size: var(--fs-s);
+    letter-spacing: 0.05em;
+    color: var(--rose-deep);
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .section { padding: 2rem 1rem; }
+    .services-grid { grid-template-columns: 1fr; }
+  }
+
+  .zalo-fab {
+    position: fixed;
+    bottom: calc(1.2rem + env(safe-area-inset-bottom, 0px));
+    right: calc(1.2rem + env(safe-area-inset-right, 0px));
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0068ff 0%, #0091ff 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0,104,255,0.35);
+    z-index: 9999;
+    transition: transform 0.25s, box-shadow 0.25s;
+    isolation: isolate;
+    line-height: 0;
+  }
+  .zalo-fab svg { display: block; width: 26px; height: 26px; position: relative; z-index: 2; }
+  .zalo-fab:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0,104,255,0.5);
+  }
+  .zalo-fab::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(0,145,255,0.5);
+    z-index: 1;
+    animation: zalo-pulse 2s infinite;
+    pointer-events: none;
+  }
+  @keyframes zalo-pulse {
+    0% { transform: scale(1); opacity: 0.55; }
+    100% { transform: scale(1.55); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="sakura-canvas"></canvas>
+
+<header class="site-header">
+  <div class="header-brand">TIMELESS</div>
+  <div class="header-tagline" style="margin: 0.3rem 0 0.5rem;">🌸</div>
+  <div class="header-tagline">DỊCH VỤ KHÁC</div>
+</header>
+
+<nav>
+  <a href="index.html" class="nav-tab" style="text-decoration:none;">← Trang chủ</a>
+  <div class="nav-tab active" onclick="showTab('services', this)">Dịch vụ</div>
+  <div class="nav-tab" onclick="showTab('payment', this)">Thanh toán</div>
+</nav>
+
+<!-- SERVICES -->
+<div class="section active" id="tab-services">
+  <div class="section-header">
+    <div class="section-title">Dịch vụ</div>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="services-grid" id="services-container"></div>
+</div>
+
+<!-- PAYMENT -->
+<div class="section" id="tab-payment">
+  <div class="section-header">
+    <div class="section-title">Thanh toán</div>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="payment-card">
+    <div class="payment-bank-name">MBBANK (NH QUÂN ĐỘI)</div>
+    <div class="payment-stk">0368968497</div>
+    <div class="payment-name">HOANG LAN PHUONG</div>
+    <div style="margin-top:1.5rem">
+      <img src="qr-payment.png" alt="QR MBBank" loading="lazy" style="width:200px;height:200px;object-fit:contain;border-radius:8px">
+    </div>
+    <button class="copy-btn" onclick="copySTK()">SAO CHÉP SỐ TÀI KHOẢN</button>
+  </div>
+
+  <div class="note-gold" style="margin-bottom:1.5rem">
+    Nội dung chuyển khoản: <strong>CHỈ GHI tên nick Facebook muốn thuê nhóm</strong> (Không ghi gì thêm). Sau khi thanh toán, gửi link nick thuê cho QTV để được kích hoạt và cấp huy hiệu chuyên gia.
+  </div>
+
+  <div class="info-card">
+    <div class="info-card-title">Quy trình sau thanh toán</div>
+    <ul>
+      <li>Chuyển khoản đúng số tiền theo dịch vụ đã chọn</li>
+      <li>Ghi nội dung: tên nick Facebook + dịch vụ</li>
+      <li>Gửi ảnh chuyển khoản cho QTV để xác nhận</li>
+      <li>Team xử lý yêu cầu trong vòng 24h</li>
+    </ul>
+  </div>
+</div>
+
+<a href="https://zalo.me/0368968497" target="_blank" class="zalo-fab" aria-label="Chat Zalo với Timeless">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
+    <path d="M12 2C6.48 2 2 6.02 2 10.96c0 2.72 1.36 5.16 3.5 6.82v3.72l3.4-1.94c1 .25 2.05.38 3.1.38 5.52 0 10-4.02 10-8.98S17.52 2 12 2z"/>
+  </svg>
+</a>
+
+<footer>
+  <div class="footer-tagline">Cảm ơn bạn đã tin tưởng và đồng hành cùng Timeless 🤝</div>
+</footer>
+
+<script>
+  const services = [
+    {
+      name: 'Duyệt bài nhanh',
+      desc: 'Bài viết được duyệt ưu tiên, không cần chờ hàng đợi',
+      price: '50.000₫',
+      unit: '/ bài',
+      note: null
+    },
+    {
+      name: 'Bỏ cấm',
+      desc: 'Gỡ lệnh cấm khỏi nhóm cho tài khoản bị vi phạm',
+      price: '250.000₫',
+      unit: '/ lần đầu, nếu tiếp tục vi phạm phí sẽ x2',
+      note: 'Với KOL / nhà bán hàng đang thuê nhóm nếu cố ý vi phạm, phí từ 200.000₫ (Tuỳ mức độ nghiêm trọng sẽ huỷ hợp tác)'
+    },
+    {
+      name: 'Bỏ đình chỉ',
+      desc: 'Gỡ trạng thái đình chỉ để tiếp tục đăng bài',
+      price: '250.000₫',
+      unit: '/ lần đầu, nếu tiếp tục vi phạm phí sẽ x2',
+      note: 'Với KOL / nhà bán hàng đang thuê nhóm nếu cố ý vi phạm, phí từ 200.000₫ (Tuỳ mức độ nghiêm trọng sẽ huỷ hợp tác)'
+    },
+    {
+      name: 'Check ẩn danh',
+      desc: 'Kiểm tra tài khoản đăng bài ẩn danh trong nhóm',
+      price: '250.000₫',
+      unit: '/ lần',
+      note: null
+    },
+    {
+      name: 'Gỡ bài',
+      desc: 'Team sẽ kiểm tra lại nội dung và tiến hành gỡ bài nếu bài viết sai sự thật hoặc công kích cá nhân',
+      price: 'Miễn phí',
+      unit: '',
+      note: null
+    }
+  ];
+
+  function renderServices(data) {
+    const container = document.getElementById('services-container');
+    container.innerHTML = data.map(s => `
+      <div class="service-card">
+        <div class="service-name">${s.name}</div>
+        <div class="service-desc">${s.desc}</div>
+        <div class="service-price-row">
+          <span class="service-price-label">${s.unit}</span>
+          <span class="service-price-value">${s.price}</span>
+        </div>
+        ${s.note ? `<div class="service-note">${s.note}</div>` : ''}
+      </div>
+    `).join('');
+  }
+
+  renderServices(services);
+
+  // SAKURA FALLING EFFECT
+  const canvas = document.getElementById('sakura-canvas');
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const petals = [];
+  const PETAL_COUNT = 50;
+  const PETAL = '🌸';
+
+  for (let i = 0; i < PETAL_COUNT; i++) {
+    petals.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight - window.innerHeight,
+      size: Math.random() * 10 + 15,
+      speedY: Math.random() * 0.6 + 0.6,
+      speedX: Math.random() * 0.4 - 0.2,
+      rotation: Math.random() * 360,
+      rotSpeed: (Math.random() - 0.5) * 0.4,
+      opacity: Math.random() * 0.20 + 0.25,
+      sway: Math.random() * 0.3,
+      swayOffset: Math.random() * Math.PI * 2
+    });
+  }
+
+  let frame = 0;
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    frame++;
+    petals.forEach(p => {
+      p.y += p.speedY;
+      p.x += p.speedX + Math.sin(frame * 0.01 + p.swayOffset) * p.sway;
+      p.rotation += p.rotSpeed;
+      if (p.y > canvas.height + 20) {
+        p.y = -20;
+        p.x = Math.random() * canvas.width;
+      }
+      ctx.save();
+      ctx.globalAlpha = p.opacity;
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation * Math.PI / 180);
+      ctx.font = `${p.size}px serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(PETAL, 0, 0);
+      ctx.restore();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  function showTab(tab, el) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    el.classList.add('active');
+  }
+
+  function copySTK() {
+    navigator.clipboard.writeText('0368968497').then(() => {
+      alert('ĐÃ SAO CHÉP SỐ TÀI KHOẢN: 0368968497');
+    });
+  }
+</script>
+</body>
+</html>

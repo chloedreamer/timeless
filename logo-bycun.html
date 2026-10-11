@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo BY CUN LUXURY</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f5eeed;
+  }
+
+  .logo-wrap {
+    width: 1000px;
+    height: 667px;
+    background: #f5eeed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
+  /* Hoa lan — vẽ bằng SVG */
+  .orchid {
+    width: 220px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 72px;
+    color: #6b6b6b;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .sub-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: #a0a0a0;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="logo-wrap">
+  <!-- Hoa lan SVG -->
+  <svg class="orchid" viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Cánh trên trái -->
+    <ellipse cx="80" cy="65" rx="55" ry="45" transform="rotate(-15 80 65)" fill="#faf0f0" stroke="#c0b0b0" stroke-width="1.2"/>
+    <!-- Cánh trên phải -->
+    <ellipse cx="140" cy="65" rx="55" ry="45" transform="rotate(15 140 65)" fill="#faf0f0" stroke="#c0b0b0" stroke-width="1.2"/>
+    <!-- Cánh dưới trái -->
+    <ellipse cx="70" cy="130" rx="40" ry="30" transform="rotate(20 70 130)" fill="#faf0f0" stroke="#c0b0b0" stroke-width="1.2"/>
+    <!-- Cánh dưới phải -->
+    <ellipse cx="150" cy="130" rx="40" ry="30" transform="rotate(-20 150 130)" fill="#faf0f0" stroke="#c0b0b0" stroke-width="1.2"/>
+    <!-- Cánh giữa dưới -->
+    <ellipse cx="110" cy="150" rx="25" ry="35" fill="#fce8e8" stroke="#c0b0b0" stroke-width="1.2"/>
+    <!-- Nhụy giữa -->
+    <ellipse cx="110" cy="105" rx="18" ry="22" fill="#fce0e0" stroke="#d4a0a0" stroke-width="1"/>
+    <!-- Chấm nhụy -->
+    <circle cx="110" cy="100" r="5" fill="#e8b0b0"/>
+    <circle cx="105" cy="108" r="3" fill="#d4a0a0"/>
+    <circle cx="115" cy="108" r="3" fill="#d4a0a0"/>
+    <!-- Đường gân cánh -->
+    <path d="M60 50 Q80 70 80 90" stroke="#e0d0d0" stroke-width="0.8" fill="none"/>
+    <path d="M160 50 Q140 70 140 90" stroke="#e0d0d0" stroke-width="0.8" fill="none"/>
+    <path d="M110 120 Q110 140 110 170" stroke="#e0d0d0" stroke-width="0.8" fill="none"/>
+  </svg>
+
+  <div class="brand-name">By Cun Luxury</div>
+  <div class="sub-name">Timeless</div>
+</div>
+
+</body>
+</html>

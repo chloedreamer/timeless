@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+Disallow: /timeless-admin/
+
+# Common bots — welcome
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: FacebookBot
+Allow: /
+
+# Bad bots — block
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+User-agent: DotBot
+Disallow: /
+
+Sitemap: https://timeless-vn.vercel.app/sitemap.xml
