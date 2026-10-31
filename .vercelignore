@@ -5,3 +5,9 @@ _backups/
 # Cấu hình local, rác hệ điều hành
 .claude/
 .DS_Store
+comments/
+
+# Project con, deploy riêng — không đưa lên timeless-vn
+rebate-site/
+shopee-link/
+timeless-admin/

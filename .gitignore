@@ -3,3 +3,9 @@ _backups/
 *.backup-*
 .DS_Store
 .claude/
+comments/
+
+# Project con, deploy riêng — không nằm trong site chính
+rebate-site/
+shopee-link/
+timeless-admin/
